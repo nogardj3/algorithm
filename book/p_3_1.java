@@ -1,4 +1,4 @@
-public class java_code {
+public class p_3_1 {
 
     public static void main(String[] args) {
         // write your code here
@@ -7,7 +7,7 @@ public class java_code {
         System.out.println(ttt());
     }
 
-    public static String ttt(){
+    public static String ttt() {
         return "asdf";
     }
 }
