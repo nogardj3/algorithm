@@ -1,1 +1,7 @@
-# algorithm_python
+# algorithm
+
+## Languages
+
+- Python
+- Java
+- Kotlin
