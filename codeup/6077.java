@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-class p_3_1 {
+class 6077 {
     public static void main(String[] args) throws IOException {
         int N = 0;
         int count = 0;
