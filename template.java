@@ -9,25 +9,25 @@ class template {
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         // StringTokenizer st = new StringTokenizer(br.readLine());
 
-        // int N = Integer.parseInt(st.nextToken());
-        // int M = Integer.parseInt(st.nextToken());
+        // int n = Integer.parseInt(st.nextToken());
+        // int m = Integer.parseInt(st.nextToken());
 
         // n * m 2차원 배열 받기
-        // int[][] arr = new int[N][M];
-        // for (int i = 0; i < N; i++) {
+        // int[][] arr = new int[n][m];
+        // for (int i = 0; i < n; i++) {
         // String str = br.readLine();
-        // for (int j = 0; j < M; j++) {
+        // for (int j = 0; j < m; j++) {
         // arr[i][j] = Integer.parseInt(String.valueOf(str.charAt(j)));
         // }
         // }
-        // System.out.print(N + " " + M);
-        // for (int i = 0; i < N; i++) {
-        // for (int j = 0; j < M; j++) {
+        // System.out.print(n + " " + m);
+        // for (int i = 0; i < n; i++) {
+        // for (int j = 0; j < m; j++) {
         // System.out.print(arr[i][j]);
         // }
         // System.out.println();
         // }
 
-        System.out.println(("Hello World! 안녕 월드"));
+        System.out.println("Hello World! 안녕 월드");
     }
 }

@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-class p_3_2 {
+class p_3_u2 {
     public static void main(String[] args) throws IOException {
         // 단순 공백 기준 여러개 받기
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -27,33 +27,27 @@ class p_3_2 {
         // }
         // System.out.println();
         // }
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
         int n = Integer.parseInt(st.nextToken());
-        int m = Integer.parseInt(st.nextToken());
-        int k = Integer.parseInt(st.nextToken());
 
+        int[] arr = new int[n];
         st = new StringTokenizer(br.readLine());
-        int max1 = 0;
-        int max2 = 0;
         for (int i = 0; i < n; i++) {
-            int num = Integer.parseInt(st.nextToken());;
-            if (i == 0) {
-                max1 = num;
-                max2 = num;
-            }
-            int max = Math.max(max1, num);
-            if (max1 != max) {
-                max2 = max1;
-                max1 = max;
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+        Arrays.sort(arr);
+
+        int result = 0;
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            result += 1;
+            if (result >= arr[i]) {
+                result = 0;
+                count += 1;
             }
         }
-
-        int result = m / (k + 1) * ((max1 * k) + max2);
-        result += m % (k + 1) * max1;
-
-        System.out.println(result);
+        System.out.println(count);
     }
 }

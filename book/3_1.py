@@ -11,4 +11,3 @@ for t in left:
     res += n // t
     n %= t
     print(n, res)
-print('하하')
