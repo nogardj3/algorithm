@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-class p_6083 {
+class p_6091 {
     public static void main(String[] args) throws IOException {
         // 단순 공백 기준 여러개 받기
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -31,23 +31,17 @@ class p_6083 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int r = Integer.parseInt(st.nextToken());
-        int g = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int k = Integer.parseInt(st.nextToken());
 
-        int count = 0;
-        for (int i = 0; i < r; i++) {
-            for (int j = 0; j < g; j++) {
-                for (int k = 0; k < b; k++) {
-                    System.out.println(i + " " + j + " " + k);
-                    count++;
-                }
-            }
+        int num = 1;
+
+        while (num % n != 0 | num % m != 0 | num % k != 0) {
+            num++;
         }
-        System.out.println(count);
 
-
-
+        System.out.println(num);
     }
 }
 

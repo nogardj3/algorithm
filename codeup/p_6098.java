@@ -3,7 +3,7 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-class p_6083 {
+class p_6098 {
     public static void main(String[] args) throws IOException {
         // 단순 공백 기준 여러개 받기
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -29,25 +29,46 @@ class p_6083 {
         // }
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringTokenizer st;
 
-        int r = Integer.parseInt(st.nextToken());
-        int g = Integer.parseInt(st.nextToken());
-        int b = Integer.parseInt(st.nextToken());
+        int[][] arr = new int[10][10];
 
-        int count = 0;
-        for (int i = 0; i < r; i++) {
-            for (int j = 0; j < g; j++) {
-                for (int k = 0; k < b; k++) {
-                    System.out.println(i + " " + j + " " + k);
-                    count++;
-                }
+        int start_x = 1;
+        int start_y = 1;
+        for (int i = 0; i < 10; i++) {
+            st = new StringTokenizer(br.readLine());
+
+            for (int j = 0; j < 10; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        System.out.println(count);
 
+        while (true) {
+            if (arr[start_x][start_y] == 2) {
+                arr[start_x][start_y] = 9;
+                break;
+            } else {
+                arr[start_x][start_y] = 9;
+                if (arr[start_x][start_y + 1] != 1)
+                    start_y++;
+                else if (arr[start_x + 1][start_y] != 1)
+                    start_x++;
+                else
+                    break;
+            }
+        }
 
+        print_arr(arr, 10, 10);
+    }
 
+    public static void print_arr(int[][] arr, int x, int y) {
+        for (int i = 0; i < x; i++) {
+            String str = "";
+            for (int j = 0; j < y; j++) {
+                str = str + arr[i][j] + " ";
+            }
+            System.out.println(str);
+        }
     }
 }
 
