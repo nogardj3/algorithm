@@ -20,10 +20,4 @@ data = sys.stdin.readline().rstrip()
 print(n, m, data)
 """
 
-print("Hello World! 안녕 월드")
-
-
-@override
-public int compare(String a, String b){
- 
-}
+print("Hello World")
