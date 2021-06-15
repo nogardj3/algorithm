@@ -10,7 +10,7 @@ import sys
 n, m = map(int, input().split())
 
 # n * m 2차원 배열 받기
-n, m = int(input())
+n = int(input())
 for i in range(n):
     data = list(map(int, input().split()))  # n개 받기
 
