@@ -5,6 +5,7 @@ import collections
 import math
 import sys
 
+# Frequently Used Methods
 """
 # 단순 공백 기준 여러개 받기
 n, m = map(int, input().split())
@@ -21,9 +22,3 @@ print(n, m, data)
 """
 
 print("Hello World! 안녕 월드")
-
-
-@override
-public int compare(String a, String b){
- 
-}
