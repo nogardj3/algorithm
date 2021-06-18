@@ -19,15 +19,12 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-
-arr = input().split('-')
+t = int(input())
 
 res = 0
+last_num = 0
+while (res < t):
+    last_num +=1
+    res += last_num
 
-for i in arr[0].split('+'):
-    res += int(i)
-for i in arr[1:]:
-    for j in i.split('+'):
-        res -= int(j)
-
-print(res)
+print(last_num -1 if t != res else 1)

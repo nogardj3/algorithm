@@ -19,15 +19,18 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
+n = int(input())
 
-arr = input().split('-')
+arr = []
+for i in range(n):
+    arr.append(int(input()))
+
+arr.sort(reverse= True)
 
 res = 0
 
-for i in arr[0].split('+'):
-    res += int(i)
-for i in arr[1:]:
-    for j in i.split('+'):
-        res -= int(j)
+for i in range(len(arr)):
+    res = max(res, arr[i] * (i + 1))
 
 print(res)
+

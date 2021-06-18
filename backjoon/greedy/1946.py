@@ -19,15 +19,20 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
+t = int(input())
 
-arr = input().split('-')
+for i in range(t):
+    n = int(input())
+    arr= []
+    for j in range(n):
+        arr.append(tuple(map(int,sys.stdin.readline().split())))
 
-res = 0
+    arr.sort(key=lambda x: (x[0]))
+    max_num = arr[0][1]
+    count = 0
+    for j in range(n):
+        if (max_num >= arr[j][1]):
+            count +=1
+            max_num = arr[j][1]
 
-for i in arr[0].split('+'):
-    res += int(i)
-for i in arr[1:]:
-    for j in i.split('+'):
-        res -= int(j)
-
-print(res)
+    print(count)
