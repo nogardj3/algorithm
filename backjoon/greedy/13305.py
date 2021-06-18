@@ -19,12 +19,18 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-t = int(input())
+n = int(input())
 
+dist = list(map(int, input().split()))  # n개 받기
+fuel = list(map(int, input().split()))  # n개 받기
+
+dist.append(0)
 res = 0
-last_num = 0
-while (res <= t):
-    last_num +=1
-    res += last_num
 
-print(last_num -1)
+min_fuel = fuel[0]
+for i in range(len(fuel)):
+    if fuel[i] < min_fuel:
+        min_fuel = fuel[i]
+    res += min_fuel * dist[i]
+
+print(res)

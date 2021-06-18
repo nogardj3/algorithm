@@ -19,12 +19,20 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-t = int(input())
+s = input()
 
-res = 0
-last_num = 0
-while (res <= t):
-    last_num +=1
-    res += last_num
+initial = s[0]
+flagflag = False
+count = 0
 
-print(last_num -1)
+for i in range(len(s)):
+    if (initial != s[i]):
+        if (flagflag == False):
+            count += 1
+        flagflag = True
+    else:
+        if (flagflag == True):
+            flagflag = False
+
+print(count)
+
