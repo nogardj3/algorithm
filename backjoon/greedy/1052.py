@@ -5,6 +5,8 @@ import collections
 import math
 import sys
 
+# FAILED
+
 """
 # 단순 공백 기준 여러개 받기
 n, m = map(int, input().split())

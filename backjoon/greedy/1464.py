@@ -5,7 +5,7 @@ import collections
 import math
 import sys
 
-#FAILED
+# FAILED
 
 s = input()
 s = ''.join(sorted(s))

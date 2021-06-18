@@ -21,8 +21,8 @@ print(n, m, data)
 """
 n = int(input())
 
-dist = list(map(int, input().split()))  # n개 받기
-fuel = list(map(int, input().split()))  # n개 받기
+dist = list(map(int, input().split()))
+fuel = list(map(int, input().split()))
 
 dist.append(0)
 res = 0
