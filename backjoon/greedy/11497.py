@@ -19,16 +19,15 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-n= int(input())
+t = int(input())
 
-data=[]
-for i in range(n):
-    data.append(int(input()))
+for i in range(t):
+    n= int(input())
+    data = list(map(int, input().split()))
+    data.sort()
 
-count = 0
-for i in range(n - 1, 0, -1):
-    if (data[i] <= data[i - 1]):
-        count += data[i-1] - data[i] +1
-        data[i - 1] = data[i] - 1
-
-print(count)
+    res = 0
+    for i in range(2,n):
+        res = max(res, abs(data[i] - data[i-2]))
+        
+    print(res)

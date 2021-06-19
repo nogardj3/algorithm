@@ -19,16 +19,19 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-n= int(input())
+n = input()
 
-data=[]
-for i in range(n):
-    data.append(int(input()))
+idx = 0
+for i in range(len(n)):
+    if (n[i] == 'U'and idx==0):
+        idx = 1
+    if (n[i] == 'C' and idx==1):
+        idx = 2
+    if (n[i] == 'P' and idx==2):
+        idx = 3
+    if (n[i] == 'C' and idx==3):
+        idx = 4
+    if idx == 4:
+        break;
 
-count = 0
-for i in range(n - 1, 0, -1):
-    if (data[i] <= data[i - 1]):
-        count += data[i-1] - data[i] +1
-        data[i - 1] = data[i] - 1
-
-print(count)
+print('I love UCPC' if idx == 4 else 'I hate UCPC')

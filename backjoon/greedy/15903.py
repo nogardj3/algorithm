@@ -19,16 +19,20 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-n= int(input())
+n, m = map(int, input().split())
 
-data=[]
-for i in range(n):
-    data.append(int(input()))
+data = list(map(int, input().split()))
 
-count = 0
-for i in range(n - 1, 0, -1):
-    if (data[i] <= data[i - 1]):
-        count += data[i-1] - data[i] +1
-        data[i - 1] = data[i] - 1
+for i in range(m):
+    data.sort()
+    data[0] = data[0] + data[1]
+    data[1] = data[0]
+        
+print(sum(data))
 
-print(count)
+# for j  in range(len(data)-1):
+#     if (data[j] != data[j + 1]):
+#         data[j] = data[j] + data[j + 1]
+#         data[j + 1] = data[j]
+#         break;
+# print(data)
