@@ -4,6 +4,7 @@ import bisect
 import collections
 import math
 import sys
+import time
 
 """
 # 단순 공백 기준 여러개 받기
@@ -19,12 +20,14 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-n, k = map(int, input().split())
 
-res = 0
-while bin(n).count('1') > k:
-    a = 2 ** (bin(n)[::-1].index('1'))
-    res += a;
-    n += a
+n = int(input())
+data= []
+for i in range(n):
+    data.append(int(input()))
+data.sort(reverse=True)
 
-print(res)
+for i in range(2, n, 3):
+    data[i] = 0
+
+print(sum(data))

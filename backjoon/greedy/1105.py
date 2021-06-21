@@ -19,12 +19,14 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-n, k = map(int, input().split())
+l, r = input().split()
 
-res = 0
-while bin(n).count('1') > k:
-    a = 2 ** (bin(n)[::-1].index('1'))
-    res += a;
-    n += a
-
-print(res)
+count = 0
+if (len(l) == len(r)):
+    for i in range(len(r)):
+        if ((l[i] == r[i]) and l[i] == '8'):
+            count += 1
+        elif(l[i]!=r[i]):
+            break;
+            
+print(count)

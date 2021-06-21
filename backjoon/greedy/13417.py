@@ -19,12 +19,19 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
-n, k = map(int, input().split())
+t = int(input())
 
-res = 0
-while bin(n).count('1') > k:
-    a = 2 ** (bin(n)[::-1].index('1'))
-    res += a;
-    n += a
+for i in range(t):
+    n = int(input())
 
-print(res)
+    data = list(input().split())
+
+    a = collections.deque()
+    a.append(data[0])
+    for i in range(1,n):
+        if (data[i] > a[0]):
+            a.append(data[i])
+        else:
+            a.appendleft(data[i])
+        # print(a)
+    print(''.join(a))
