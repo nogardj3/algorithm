@@ -6,6 +6,7 @@ import math
 import sys
 
 # Frequently Used Methods
+
 """
 # string 길이
 len(string) 
