@@ -22,10 +22,3 @@ class p_3_1 {
         System.out.println(count);
     }
 }
-
-
-Arrays.sort(arr, new Comparator<T>(){
-    @override
-    public int compare(String a, String b){
-    
-	 }})

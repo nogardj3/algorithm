@@ -10,7 +10,7 @@ import sys
 n, m = map(int, input().split())
 
 # n * m 2차원 배열 받기
-n, m = int(input())
+n = int(input())
 for i in range(n):
     data = list(map(int, input().split()))  # n개 받기
 
@@ -20,10 +20,4 @@ data = sys.stdin.readline().rstrip()
 print(n, m, data)
 """
 
-n = input()
-res = 0
-
-for i in n:
-    res = max(res + int(i), res * int(i))
-
-print(res)
+print("Hello World")

@@ -10,9 +10,9 @@ import sys
 n, m = map(int, input().split())
 
 # n * m 2차원 배열 받기
-n, m = int(input())
+n = int(input())
 for i in range(n):
-    data = list(map(int, input().split()))  # n개 받기
+    data = list(map(int, input().split()))
 
 # 빠르게 받기
 data = sys.stdin.readline().rstrip()
@@ -20,18 +20,13 @@ data = sys.stdin.readline().rstrip()
 print(n, m, data)
 """
 
-n = int(input())
-data = list(map(int, input().split()))  # n개 받기
+h = int(input())
 
-data.sort()
-
-
-result = 0
 count = 0
-for i in data:
-    result += 1
-    if result >= i:
-        count += 1
-        result = 0
+for i in range(h + 1):
+    for j in range(60):
+        for k in range(60):
+            if "3" in str(i) + str(j) + str(k):
+                count += 1
 
 print(count)

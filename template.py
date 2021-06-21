@@ -12,7 +12,7 @@ n, m = map(int, input().split())
 # n * m 2차원 배열 받기
 n = int(input())
 for i in range(n):
-    data = list(map(int, input().split()))  # n개 받기
+    data = list(map(int, input().split()))
 
 # 빠르게 받기
 data = sys.stdin.readline().rstrip()

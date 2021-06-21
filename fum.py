@@ -30,6 +30,11 @@ arr.sort(reverse= True)
 # 2d list 받기
 origin_arr = [list(map(int, list(input()))) for _ in range(n)]
 
-
+# deque
+deqq = collections.deque()
+deqq.appendleft()
+deqq.append()
+deqq.popleft()
+deqq.pop()
 
 """
