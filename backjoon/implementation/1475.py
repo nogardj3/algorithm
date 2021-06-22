@@ -21,17 +21,16 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
+data = input()
 
-n = 10001
-data = [0] * n
+arr = [0] * 10
 
-last_num = 0
-for i in range(1, n):
-    num = i + sum(map(int, str(i)))
-    if num <= n - 1:
-        data[num] = 1
+for item in data:
+    arr[int(item)] += 1
 
-for i in range(1, n):
-    if data[i] == 0:
-        # pass
-        print(i)
+s = arr[6] + arr[9]
+t = s // 2
+arr[6] = t
+arr[9] = s - t
+
+print(max(arr))

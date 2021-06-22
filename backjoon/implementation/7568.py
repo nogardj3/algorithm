@@ -21,17 +21,18 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
+n = int(input())
 
-n = 10001
-data = [0] * n
+data = []
+for i in range(n):
+    data.append(tuple(map(int, input().split())))
 
-last_num = 0
-for i in range(1, n):
-    num = i + sum(map(int, str(i)))
-    if num <= n - 1:
-        data[num] = 1
+res = ""
+for item in data:
+    rank = 1
+    for j in data:
+        if item[0] < j[0] and item[1] < j[1]:
+            rank += 1
+    res += str(rank) + " "
 
-for i in range(1, n):
-    if data[i] == 0:
-        # pass
-        print(i)
+print(res)

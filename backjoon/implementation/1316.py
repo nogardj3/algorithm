@@ -21,17 +21,22 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
+t = int(input())
 
-n = 10001
-data = [0] * n
+res = 0
+for i in range(t):
+    target_str = input()
+    checks = {}
 
-last_num = 0
-for i in range(1, n):
-    num = i + sum(map(int, str(i)))
-    if num <= n - 1:
-        data[num] = 1
+    count = 1
+    for i in range(len(target_str)):
+        if not (target_str[i] in checks):
+            checks[target_str[i]] = True
+        elif target_str[i - 1] == target_str[i]:
+            pass
+        else:
+            count = 0
+            break
+    res += count
 
-for i in range(1, n):
-    if data[i] == 0:
-        # pass
-        print(i)
+print(res)

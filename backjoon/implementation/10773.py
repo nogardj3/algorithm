@@ -21,17 +21,22 @@ data = sys.stdin.readline().rstrip()
 
 print(n, m, data)
 """
+n = int(input())
 
-n = 10001
-data = [0] * n
+data = []
+for i in range(n):
+    data = int(input())
+data.reverse()
 
-last_num = 0
-for i in range(1, n):
-    num = i + sum(map(int, str(i)))
-    if num <= n - 1:
-        data[num] = 1
+delete_count = 0
+res = 0
+for item in data:
+    if item == 0:
+        delete_count += 1
+    else:
+        if delete_count != 0:
+            delete_count -= 1
+        else:
+            res += item
 
-for i in range(1, n):
-    if data[i] == 0:
-        # pass
-        print(i)
+print(res)

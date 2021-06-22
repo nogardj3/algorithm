@@ -22,16 +22,20 @@ data = sys.stdin.readline().rstrip()
 print(n, m, data)
 """
 
-n = 10001
-data = [0] * n
+e, s, m = map(int, input().split())
 
-last_num = 0
-for i in range(1, n):
-    num = i + sum(map(int, str(i)))
-    if num <= n - 1:
-        data[num] = 1
+table = [()] * 7981
 
-for i in range(1, n):
-    if data[i] == 0:
-        # pass
+te = 1
+ts = 1
+tm = 1
+for i in range(1, 7981):
+    table[i] = tuple((te, ts, tm))
+    te = 1 if te == 15 else te + 1
+    ts = 1 if ts == 28 else ts + 1
+    tm = 1 if tm == 19 else tm + 1
+
+for i in range(1, 7981):
+    if table[i] == tuple((e, s, m)):
         print(i)
+        break

@@ -24,6 +24,9 @@ for i in range(n):
 # tuple의 값 따라 정렬
 data.sort(key=lambda x: (x[1], x[0]))
 
+# list 역순 만들기
+arr.reverse()
+
 # list 역순 정렬
 arr.sort(reverse= True)
 
@@ -36,5 +39,9 @@ deqq.appendleft()
 deqq.append()
 deqq.popleft()
 deqq.pop()
+
+# string find
+str.find('aa')  # 없으면 -1
+str.index('aa') # 없으면 에러
 
 """
