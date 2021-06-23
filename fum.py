@@ -44,4 +44,11 @@ deqq.pop()
 str.find('aa')  # 없으면 -1
 str.index('aa') # 없으면 에러
 
+# 리스트 띄워서 출력
+res = [1,2,3]
+print(*res)
+
+# 2차원 배열 한줄 선언
+data = [[0 for col in range(n)] for row in range(n)]
+
 """

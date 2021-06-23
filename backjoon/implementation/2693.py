@@ -16,10 +16,21 @@ n = int(input())
 for i in range(n):
     data = list(map(int, input().split()))
 
+data = [list(map(int, input())) for _ in range(n)]
+
 # 빠르게 받기
 data = sys.stdin.readline().rstrip()
+
+print(n, m, data)
 """
 import sys
 
 input = lambda: sys.stdin.readline().strip()
 ############################################
+
+t = int(input())
+
+for i in range(t):
+    data = list(map(int, input().split()))
+    data.sort(reverse=True)
+    print(data[2])

@@ -36,5 +36,4 @@ for i in range(1, n):
 
 for i in range(1, n):
     if data[i] == 0:
-        # pass
         print(i)

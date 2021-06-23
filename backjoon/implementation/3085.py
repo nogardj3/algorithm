@@ -6,7 +6,6 @@ import math
 import time
 import re
 
-# FAILED
 """
 # 단순 공백 기준 여러개 받기
 n, m = map(int, input().split())
@@ -25,13 +24,6 @@ import sys
 
 input = lambda: sys.stdin.readline().strip()
 ############################################
-
-
-def print_data():
-    global data, n
-    for i in range(n):
-        print(data[i])
-    print()
 
 
 def find_max(n_1, n_2, n_left, isRow):
@@ -93,7 +85,6 @@ for i in range(n):
 for i in range(n):
     for j in range(n - 1):
         data[j][i], data[j + 1][i] = data[j + 1][i], data[j][i]
-        # print_data()
         max_num = max(find_max(j, i, j + 1, isRow=True), max_num)
         data[j][i], data[j + 1][i] = data[j + 1][i], data[j][i]
 
