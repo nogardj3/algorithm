@@ -25,21 +25,20 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-n, k = map(int, input().split())
+n = int(input())
 
-index = 0
+matrix = [[0] * 101 for i in range(101)]
 
-check = [0] * 1001
-flag = False
-for i in range(2, n + 1):
-    for j in range(i, n + 1, i):
-        if check[j] == 0:
-            check[j] = 1
-            index += 1
-            # print("   ", j)
-        if index == k:
-            flag = True
-            break
-    if flag:
-        print(j)
-        break
+for i in range(n):
+    w, h = map(int, input().split())
+    for i in range(w, w + 10):
+        for j in range(h, h + 10):
+            matrix[i][j] = 1
+            # print(i, j)
+            # time.sleep(0.1)
+
+count = 0
+for i in range(101):
+    count += matrix[i].count(1)
+
+print(count)

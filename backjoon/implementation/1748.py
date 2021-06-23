@@ -25,21 +25,17 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-n, k = map(int, input().split())
+n = int(input())
 
-index = 0
+len_n = len(str(n))
 
-check = [0] * 1001
-flag = False
-for i in range(2, n + 1):
-    for j in range(i, n + 1, i):
-        if check[j] == 0:
-            check[j] = 1
-            index += 1
-            # print("   ", j)
-        if index == k:
-            flag = True
-            break
-    if flag:
-        print(j)
-        break
+if len_n == 1:
+    print(n)
+else:
+    res = 0
+    for i in range(1, len_n):
+        res += 9 * i * 10 ** (i - 1)
+
+    tt = len_n * ((n - (10 ** (len_n - 1))) + 1)
+    res += tt
+    print(res)

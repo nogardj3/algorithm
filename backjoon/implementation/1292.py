@@ -25,21 +25,20 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-n, k = map(int, input().split())
+a, b = map(int, input().split())
 
-index = 0
-
-check = [0] * 1001
-flag = False
-for i in range(2, n + 1):
-    for j in range(i, n + 1, i):
-        if check[j] == 0:
-            check[j] = 1
-            index += 1
-            # print("   ", j)
-        if index == k:
-            flag = True
+data = []
+for i in range(1, 1000):
+    for j in range(1, i + 1):
+        if len(data) < 1000:
+            data.append(i)
+        else:
             break
-    if flag:
-        print(j)
+    if len(data) >= 1000:
         break
+
+res = 0
+for i in range(a - 1, b):
+    res += data[i]
+
+print(res)
