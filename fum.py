@@ -51,4 +51,8 @@ print(*res)
 # 2차원 배열 한줄 선언
 data = [[0 for col in range(n)] for row in range(n)]
 
+# 아스키코드
+ord('A')   # 한 문자를 아스키 코드로
+chr(65)    # 아스키코드를 문자로
+
 """
