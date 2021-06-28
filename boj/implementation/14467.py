@@ -7,6 +7,8 @@ import time
 import re
 import copy
 
+# FAILED
+
 """
 # 단순 공백 기준 여러개 받기
 n, m = map(int, input().split())
@@ -28,20 +30,17 @@ input = lambda: sys.stdin.readline().strip()
 
 n = int(input())
 
-max = 0
-ti = -1
+data = dict()
+
+count = 0
 for i in range(n):
-    data = list(map(int, input().split()))
-    lists = list(set(itertools.combinations(data, 3)))
-    lists.sort()
+    cow, lr = map(int, input().split())
+    if cow not in data:
+        data[cow] = lr
+    else:
+        if data[cow] != lr:
+            count += 1
+            data[cow] = lr
+            # print("=====", cow, lr)
 
-    tm = 0
-    for j in range(len(lists)):
-        if tm <= sum(lists[j]) % 10:
-            tm = sum(lists[j]) % 10
-
-    if max <= tm:
-        max = tm
-        ti = i + 1
-
-print(ti)
+print(count)

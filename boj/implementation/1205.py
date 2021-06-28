@@ -7,6 +7,8 @@ import time
 import re
 import copy
 
+# FAILED
+
 """
 # 단순 공백 기준 여러개 받기
 n, m = map(int, input().split())
@@ -26,22 +28,23 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-n = int(input())
+n, score, p = map(int, input().split())
 
-max = 0
-ti = -1
-for i in range(n):
-    data = list(map(int, input().split()))
-    lists = list(set(itertools.combinations(data, 3)))
-    lists.sort()
+if n == 0:
+    print(1)
+else:
+    scores = list(map(int, list(input().split())))
 
-    tm = 0
-    for j in range(len(lists)):
-        if tm <= sum(lists[j]) % 10:
-            tm = sum(lists[j]) % 10
+    if n == p and scores[-1] >= score:
+        print(-1)
+    else:
+        scores.append(score)
+        scores.sort(reverse=True)
 
-    if max <= tm:
-        max = tm
-        ti = i + 1
+        res = 0
+        for i in range(len(scores)):
+            if scores[i] == score:
+                res = i
+                break
 
-print(ti)
+        print(res + 1)
