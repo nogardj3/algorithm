@@ -3,7 +3,15 @@ import heapq
 import bisect
 import collections
 import math
+import time
+import re
+import copy
+
+############################################
 import sys
+
+input = lambda: sys.stdin.readline().strip()
+############################################
 
 n = input()
 res = 0

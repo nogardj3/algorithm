@@ -1,9 +1,24 @@
-n, m, k = map(int, input().split())  # n,m,k 받기
-data = list(map(int, input().split()))  # n개 받기
+import itertools
+import heapq
+import bisect
+import collections
+import math
+import time
+import re
+import copy
 
-data.sort()  # 오름차순
-first = data[n - 1]  # 마지막 인덱스
-second = data[n - 2]  # 그 다음 인덱스
+############################################
+import sys
+
+input = lambda: sys.stdin.readline().strip()
+############################################
+
+n, m, k = map(int, input().split())
+data = list(map(int, input().split()))
+
+data.sort()
+first = data[n - 1]
+second = data[n - 2]
 
 res = 0
 if first == second:

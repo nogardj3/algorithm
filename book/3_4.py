@@ -1,4 +1,19 @@
-n, m = map(int, input().split())  # n,m 받기
+import itertools
+import heapq
+import bisect
+import collections
+import math
+import time
+import re
+import copy
+
+############################################
+import sys
+
+input = lambda: sys.stdin.readline().strip()
+############################################
+
+n, m = map(int, input().split())
 
 count = 0
 while True:
