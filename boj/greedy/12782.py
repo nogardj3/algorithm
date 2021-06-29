@@ -3,21 +3,28 @@ import heapq
 import bisect
 import collections
 import math
+import time
+import re
+import copy
+
+############################################
 import sys
 
-t= int(input())
+input = lambda: sys.stdin.readline().strip()
+############################################
+
+t = int(input())
 
 for i in range(t):
     n, m = input().split()
     diff_count = 0
     for i in range(len(n)):
-        if (n[i] != m[i]):
+        if n[i] != m[i]:
             diff_count += 1
 
     cn = n.count("1")
     cm = m.count("1")
     op1 = abs(cn - cm)
 
-    count = (diff_count + op1)  // 2
+    count = (diff_count + op1) // 2
     print(count)
-

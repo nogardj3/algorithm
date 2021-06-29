@@ -3,19 +3,27 @@ import heapq
 import bisect
 import collections
 import math
+import time
+import re
+import copy
+
+############################################
 import sys
+
+input = lambda: sys.stdin.readline().strip()
+############################################
 
 a, b = map(int, input().split())
 
 count = 1
-while (a < b):
-    if (b % 2 == 0):
+while a < b:
+    if b % 2 == 0:
         b //= 2
         count += 1
-    elif (b % 10 == 1):
+    elif b % 10 == 1:
         b //= 10
         count += 1
     else:
-        break;
+        break
 
 print(count if b == a else -1)

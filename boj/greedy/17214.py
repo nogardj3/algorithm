@@ -3,23 +3,30 @@ import heapq
 import bisect
 import collections
 import math
-import sys
+import time
 import re
+import copy
+
+############################################
+import sys
+
+input = lambda: sys.stdin.readline().strip()
+############################################
 
 s = input()
-a = s.split('+')
+a = s.split("+")
 res = ""
 
 for item in a:
-    if item != '0' :
-        count = item.count('x')
+    if item != "0":
+        count = item.count("x")
 
-        num = int(re.findall('-?\d+', item)[0])
+        num = int(re.findall("-?\d+", item)[0])
         num2 = int(num / (count + 1))
-        print (num2)
-        mod = str(num2).replace('1','')
+        print(num2)
+        mod = str(num2).replace("1", "")
 
-        tt = mod + 'x' * (count + 1) 
-        res += tt + '+'
+        tt = mod + "x" * (count + 1)
+        res += tt + "+"
 
-print(res + 'W')
+print(res + "W")

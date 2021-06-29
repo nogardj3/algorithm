@@ -3,7 +3,15 @@ import heapq
 import bisect
 import collections
 import math
+import time
+import re
+import copy
+
+############################################
 import sys
+
+input = lambda: sys.stdin.readline().strip()
+############################################
 
 n = int(input())
 
@@ -34,4 +42,4 @@ for i in range(n):
                 max_c = c
                 max_l = l
 
-print(res_index+1)
+print(res_index + 1)

@@ -3,13 +3,21 @@ import heapq
 import bisect
 import collections
 import math
+import time
+import re
+import copy
+
+############################################
 import sys
 
-n= int(input())
+input = lambda: sys.stdin.readline().strip()
+############################################
+
+n = int(input())
 a, b = map(int, input().split())
 c = int(input())
 
-data=[]
+data = []
 for i in range(n):
     data.append(int(input()))
 data.sort(reverse=True)
@@ -22,11 +30,11 @@ for i in range(n):
     sum_price = a + (count + 1) * b
     temp = sum_cal / sum_price
 
-    if (res < temp):
+    if res < temp:
         res = temp
         count += 1
         cur_sum += data[i]
     else:
-        break;
+        break
 
 print(int(res))

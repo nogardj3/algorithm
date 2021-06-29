@@ -3,9 +3,17 @@ import heapq
 import bisect
 import collections
 import math
+import time
+import re
+import copy
+
+############################################
 import sys
 
-# failed
+input = lambda: sys.stdin.readline().strip()
+############################################
+
+# FAILED
 
 n, m = map(int, input().split())
 
@@ -16,12 +24,12 @@ for i in range(n):
 count = 0
 for k in range(n):
     if count == m:
-        break;
+        break
     for i in range(n - 1, k, -1):
-        if (ll[i] > ll[i - 1]):
-            ll[i],ll[i-1] = ll[i-1],ll[i]
+        if ll[i] > ll[i - 1]:
+            ll[i], ll[i - 1] = ll[i - 1], ll[i]
             count += 1
         if count == m:
-            break;
+            break
 
 print(ll)

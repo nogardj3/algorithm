@@ -5,10 +5,18 @@ import collections
 import math
 import sys
 import time
+import re
+import copy
+
+############################################
+import sys
+
+input = lambda: sys.stdin.readline().strip()
+############################################
 
 n = int(input())
 
-data= []
+data = []
 for i in range(n):
     data.append(int(input()))
 data.sort(reverse=True)

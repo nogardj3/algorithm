@@ -22,8 +22,6 @@ for i in range(n):
     for i in range(w, w + 10):
         for j in range(h, h + 10):
             matrix[i][j] = 1
-            # print(i, j)
-            # time.sleep(0.1)
 
 count = 0
 for i in range(101):

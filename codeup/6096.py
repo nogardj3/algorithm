@@ -3,25 +3,19 @@ import heapq
 import bisect
 import collections
 import math
+import time
+import re
+import copy
+
+############################################
 import sys
 
-"""
-# 단순 공백 기준 여러개 받기
-n, m = map(int, input().split())
+input = lambda: sys.stdin.readline().strip()
+############################################
 
-# n * m 2차원 배열 받기
-n, m = int(input())
-for i in range(n):
-    data = list(map(int, input().split()))  # n개 받기
-
-# 빠르게 받기
-data = sys.stdin.readline().rstrip()
-
-print(n, m, data)
-"""
-d = []  # 대괄호 [ ] 를 이용해 아무것도 없는 빈 리스트 만들기
+d = []
 for i in range(19):
-    d.append(list(map(int, input().split())))  # n개 받기
+    d.append(list(map(int, input().split())))
 
 n = int(input())
 for i in range(n):
@@ -41,5 +35,5 @@ for i in range(n):
 
 for i in range(19):
     for j in range(19):
-        print(d[i][j], end=" ")  # 공백을 두고 한 줄로 출력
-    print()  # 줄 바꿈
+        print(d[i][j], end=" ")
+    print()

@@ -3,7 +3,15 @@ import heapq
 import bisect
 import collections
 import math
+import time
+import re
+import copy
+
+############################################
 import sys
+
+input = lambda: sys.stdin.readline().strip()
+############################################
 
 n = input()
 data = list(map(int, input().split()))
@@ -23,8 +31,8 @@ else:
     min2 = select_arr[0] + select_arr[1]
     min3 = select_arr[0] + select_arr[1] + select_arr[2]
 
-    n1 = (n-2)*(n-2) + 4*(n-1)*(n-2)
-    n2 = 4*(n-2) + 4*(n-1)
+    n1 = (n - 2) * (n - 2) + 4 * (n - 1) * (n - 2)
+    n2 = 4 * (n - 2) + 4 * (n - 1)
     n3 = 4
 
     res += n1 * min1

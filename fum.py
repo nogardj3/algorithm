@@ -40,9 +40,15 @@ print(*res)
 # 변수 출력
 print(f"count : {count}}")
 
-
 # 아스키코드
 ord('A')   # 한 문자를 아스키 코드로
 chr(65)    # 아스키코드를 문자로
+
+# List Copy
+list2 = list1[:]                # 얕은 복사
+list2 = copy.deepcopy(list1)    # 깊은 복사
+
+# Regular Expresssion
+re.findall("-?\d+", str)[0]
 
 """
