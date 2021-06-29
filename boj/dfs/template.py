@@ -17,9 +17,11 @@ n = int(input())
 for i in range(n):
     data = list(map(int, input().split()))
 
-# 빠르게 받기
-data = sys.stdin.readline().rstrip()
+# 2d list 받기
+origin_arr = [list(map(int, list(input()))) for _ in range(n)]
+
 """
+############################################
 import sys
 
 input = lambda: sys.stdin.readline().strip()
