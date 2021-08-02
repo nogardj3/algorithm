@@ -8,14 +8,11 @@ class TapeEquilibrium {
         // 단순 공백 기준 여러개 받기
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
 
-        st = new StringTokenizer(br.readLine());
-        int[] A = new int[N];
-        for (int i = 0; i < N; i++) {
-            A[i] = Integer.parseInt(st.nextToken());
-        }
-        
+        //===============================================
+        int[] A = new int[0];
+        //===============================================
+
         if (A.length == 2) {
             System.out.println(Math.abs(A[0] - A[1]));
             // return Math.abs(A[0] - A[1]);

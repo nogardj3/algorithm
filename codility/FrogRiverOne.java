@@ -3,19 +3,23 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-class TapeEquilibrium {
+class FrogRiverOne {
     public static void main(String[] args) throws IOException {
-        // 단순 공백 기준 여러개 받기
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         StringTokenizer st = new StringTokenizer(br.readLine());
         int X = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[N];
-        for (int i = 0; i < N; i++) {
+        int[] A = new int[0];
+        for (int i = 0; i < 0; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
+        System.out.println(solution(X, A));
+    }
+
+    public static int solution(int X, int[] A) {
         Set<Integer> temp_set = new HashSet<>();
 
         int res = -1;
@@ -26,8 +30,6 @@ class TapeEquilibrium {
                 break;
             }
         }
-
-        System.out.println(res);
-        // return res;
+        return res;
     }
 }

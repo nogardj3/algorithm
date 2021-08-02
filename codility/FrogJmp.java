@@ -6,23 +6,24 @@ import java.util.*;
 class FrogJmp {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         StringTokenizer st = new StringTokenizer(br.readLine());
+        int X = Integer.parseInt(st.nextToken());
+        int Y = Integer.parseInt(st.nextToken());
+        int D = Integer.parseInt(st.nextToken());
 
-        String S;
-        int[] P;
-        int[] Q;
-
+        System.out.println(solution(X, Y, D));
+    }
+    
+    public static int solution(int X, int Y, int D){
         if (X == Y) {
-            System.out.println(0);
-            // return 0;
-        }
-        else{
+            return 0;
+        } else {
             int res = (Y - X) / D;
-            if((Y - X) % D != 0)
+            if ((Y - X) % D != 0)
                 res += 1;
-                
-            System.out.println(res);
-            // return res;
+
+            return res;
         }
     }
 }

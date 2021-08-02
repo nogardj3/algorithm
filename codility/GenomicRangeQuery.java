@@ -3,40 +3,52 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.*;
 
-class PermCheck {
+// FAILED Score 62%
+
+class GenomicRangeQuery {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        
+
         StringTokenizer st = new StringTokenizer(br.readLine());
         String S = st.nextToken();
-
-        st = new StringTokenizer(br.readLine());
-        int B = Integer.parseInt(st.nextToken());
         
         st = new StringTokenizer(br.readLine());
-        int K = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
 
-
-        int[] res_arr = new int[P.length];
-
-        Map<Character,Integer> val_map = new HashMap<>();
-        val_map.put('A',1);
-        val_map.put('C',2);
-        val_map.put('G',3);
-        val_map.put('T',4);
-
-        for(int j=0;j<P.length;j++){
-            int min = 5;
-            if(P[j] == Q[j])
-                min = Math.min(min,val_map.get(S.charAt(P[j])));
-            else{
-            for(int i=P[j];i<Q[j];i++){
-                min = Math.min(min,val_map.get(S.charAt(i)));
-            }
-            }
-            res_arr[j] = min;
+        st = new StringTokenizer(br.readLine());
+        int[] P = new int[n];
+        for (int i = 0; i < 0; i++) {
+            P[i] = Integer.parseInt(st.nextToken());
         }
 
-        // return res_arr;
+        st = new StringTokenizer(br.readLine());
+        int[] Q = new int[n];
+        for (int i = 0; i < 0; i++) {
+            Q[i] = Integer.parseInt(st.nextToken());
+        }
+
+        System.out.println(solution(S, P, Q));
+    }
+    
+    public static int[] solution(String S, int[] P, int[] Q) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('A', 1);
+        map.put('C', 2);
+        map.put('G', 3);
+        map.put('T', 4);
+        int[] result = new int[P.length];
+        char[] chars = S.toCharArray();
+        for (int i = 0; i < P.length; i++) {
+            int maxVal = Integer.MAX_VALUE;
+            for (int j = P[i]; j <= Q[i]; j++) {
+                // 최소값 판단
+                maxVal = Math.min(maxVal, chars[j]);
+            }
+            result[i] = maxVal;
+        }
+        for (int i = 0; i < result.length; i++) {
+            result[i] = map.get((char)result[i]);
+        }
+        return result;
     }
 }

@@ -5,16 +5,18 @@ import java.util.*;
 
 class BinaryGap {
     public static void main(String[] args) throws IOException {
-        // 단순 공백 기준 여러개 받기
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
 
+        StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
-        
+
+        System.out.println(solution(N));
+    }
+
+    public static int solution(int N){
         int res = 0;
 
         String bs = Integer.toBinaryString(N);
-        System.out.println(bs);
 
         for(int i=0;i<bs.length();i++){
             if (bs.charAt(i) == '1') {
@@ -22,12 +24,10 @@ class BinaryGap {
                     if (bs.charAt(j) == '1') {
                         if (j - i == 1) {
                             i = j - 1;
-                            System.out.println("NEAR " + i + " " + j);
                             break;
                         }
                         else {
                             res = Math.max(res, j -i- 1);
-                            System.out.println("FIND   "+ i + " " + j);
                             i = j -1;
                             break;
                         }
@@ -36,6 +36,6 @@ class BinaryGap {
             }
         }
 
-        System.out.println(res);
-    }
+        return res;
+    }; 
 }

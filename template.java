@@ -9,17 +9,21 @@ class template {
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         // StringTokenizer st = new StringTokenizer(br.readLine());
 
-        // int n = Integer.parseInt(st.nextToken());
-        // int m = Integer.parseInt(st.nextToken());
+        // --- String
+        // String S = st.nextToken();
 
-        // n 1차원 배열
-        // int[] arr = new int[n];
+        // --- int
+        // int N = Integer.parseInt(st.nextToken());
+        // int M = Integer.parseInt(st.nextToken());
+
+        // --- 1차원 배열
         // st = new StringTokenizer(br.readLine());
-        // for (int i = 0; i < n; i++) {
-        //     arr[i] = Integer.parseInt(st.nextToken());
+        // int[] A = new int[N];
+        // for (int i = 0; i < N; i++) {
+        //     A[i] = Integer.parseInt(st.nextToken());
         // }
 
-        // n * m 2차원 배열 받기
+        // --- n * m 2차원 배열 받기
         // int[][] arr = new int[n][m];
         // for (int i = 0; i < n; i++) {
         // String str = br.readLine();
@@ -36,5 +40,9 @@ class template {
         // }
 
         System.out.println("Hello World");
+    }
+
+    public static int solution(int A) {
+        return 0;
     }
 }

@@ -7,18 +7,24 @@ import java.util.*;
 
 class MaxCounters {
     public static void main(String[] args) throws IOException {
-        // 단순 공백 기준 여러개 받기
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
 
-        int K = 7;
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[K];
-        for (int i = 0; i < K; i++) {
+        int M = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        int[] A = new int[M];
+        for (int i = 0; i < M; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
+        System.out.println(solution(N, A));
+    }
+    
+    public static int[] solution(int N, int[] A) {
         int[] res_arr = new int[N];
 
         int max = 0;
@@ -30,7 +36,7 @@ class MaxCounters {
                 Arrays.fill(res_arr, max);
             }
         }
-        
-        // return res_arr;
+
+        return res_arr;
     }
 }
