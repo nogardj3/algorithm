@@ -1,11 +1,12 @@
+import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.IOException;
 import java.util.*;
 
 class PermCheck {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
 
@@ -15,6 +16,10 @@ class PermCheck {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
+        System.out.println(solution(A));
+    }
+
+    public static int solution(int[] A) {
         Arrays.sort(A);
 
         int last_val = 0;
@@ -25,7 +30,7 @@ class PermCheck {
                 break;
             }
         }
-        System.out.println(++last_val);
-        // return ++last_val;
+
+        return ++last_val;
     }
 }

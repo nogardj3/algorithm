@@ -1,6 +1,6 @@
+import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.IOException;
 import java.util.*;
 
 class template {
@@ -39,7 +39,7 @@ class template {
         // System.out.println();
         // }
 
-        System.out.println("Hello World");
+        System.out.println(solution(0));
     }
 
     public static int solution(int A) {

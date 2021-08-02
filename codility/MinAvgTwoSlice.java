@@ -1,6 +1,6 @@
+import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.IOException;
 import java.util.*;
 
 class MinAvgTwoSlice {
@@ -15,7 +15,7 @@ class MinAvgTwoSlice {
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
-        
+
         System.out.println(solution(A));
     }
     

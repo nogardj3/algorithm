@@ -1,12 +1,12 @@
+import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.IOException;
 import java.util.*;
 
 class PermMissingElem {
     public static void main(String[] args) throws IOException {
-        // 단순 공백 기준 여러개 받기
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
 
@@ -15,12 +15,14 @@ class PermMissingElem {
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
-        
+
+        System.out.println(solution(A));
+    }
+    
+    public static int solution(int[] A) {
         if (A.length == 0) {
-            System.out.println(0);
-            // return 0;
-        }
-        else{
+            return 0;
+        } else {
             int[] tmp = new int[A.length + 2];
             for (int i = 0; i < A.length; i++) {
                 tmp[A[i]] = 1;
@@ -33,10 +35,8 @@ class PermMissingElem {
                     break;
                 }
             }
-            
-            System.out.println("");
-            System.out.println(res);
-            // return res;
+
+            return res;
         }
     }
 }
