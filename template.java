@@ -12,6 +12,13 @@ class template {
         // int n = Integer.parseInt(st.nextToken());
         // int m = Integer.parseInt(st.nextToken());
 
+        // n 1차원 배열
+        // int[] arr = new int[n];
+        // st = new StringTokenizer(br.readLine());
+        // for (int i = 0; i < n; i++) {
+        //     arr[i] = Integer.parseInt(st.nextToken());
+        // }
+
         // n * m 2차원 배열 받기
         // int[][] arr = new int[n][m];
         // for (int i = 0; i < n; i++) {
