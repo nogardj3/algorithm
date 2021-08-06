@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// FAILED Score 62%
+// FAILED
 
 class GenomicRangeQuery {
     public static void main(String[] args) throws IOException {
@@ -41,7 +41,6 @@ class GenomicRangeQuery {
         for (int i = 0; i < P.length; i++) {
             int maxVal = Integer.MAX_VALUE;
             for (int j = P[i]; j <= Q[i]; j++) {
-                // 최소값 판단
                 maxVal = Math.min(maxVal, chars[j]);
             }
             result[i] = maxVal;
