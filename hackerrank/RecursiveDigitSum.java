@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class FlippingTheMaxtrix {
+class RecursiveDigitSum {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -19,17 +19,27 @@ class FlippingTheMaxtrix {
         // solution(A);
     }
     
-    public static List<Integer> solution(List<Integer> arr) {
-        List<Integer> iarray = new ArrayList<>();
+    public static int solution(String n, int k) {
+        char[] carray = n.toCharArray();
 
-        for (int i = 0; i < 100; i++) {
-            iarray.add(0);
+        long sum = 0;
+        for (char c : carray) {
+            sum += (int) (c - '0');
         }
+        sum *= k;
+        System.out.println(sum);
 
-        for (Integer integer : arr) {
-            iarray.set(integer, iarray.get(integer) + 1);
+        while (sum > 10) {
+            long temp_sum = 0;
+            while (sum != 0) {
+                temp_sum += sum % 10;
+                sum /= 10;
+            }
+
+            System.out.println(temp_sum);
+            sum = temp_sum;
         }
-
-        return iarray;
+        
+        return (int) sum;
     }
 }
