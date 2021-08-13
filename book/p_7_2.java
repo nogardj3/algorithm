@@ -12,17 +12,19 @@ class p_7_2 {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
-        M = Integer.parseInt(st.nextToken());
 
         A = new ArrayList<>();
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < N; i++) {
             A.add(Integer.parseInt(st.nextToken()));
         }
-        
+
+        st = new StringTokenizer(br.readLine());
+        M = Integer.parseInt(st.nextToken());
+
         B = new ArrayList<>();
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < M; i++) {
             B.add(Integer.parseInt(st.nextToken()));
         }
 
@@ -31,15 +33,26 @@ class p_7_2 {
 
     public static void solution() {
         Collections.sort(A);
-        Collections.sort(B, Collections.reverseOrder());
+        for (Integer integer : B) {
+            System.out.print(findNum(integer,0,A.size()-1) ? "yes " : "no ");
+        }
+    }
 
-        int sum = 0;
-        for (int i = 0; i < M; i++) {
-            sum += B.get(i);
+    public static boolean findNum(int target, int start, int end) {
+        int mid = (start + end) / 2;
+        if (start >= end) {
+            return false;
         }
-        for (int i = M; i < N; i++) {
-            sum += A.get(i);
+        else if(target == A.get(start)   || target == A.get(end) ||  target == A.get(mid))
+            return true;
+        else if (target > A.get(mid)) {
+            return findNum(target, mid + 1, end);
         }
-        System.out.println(sum);
+        else if(target < A.get(mid)){
+            return findNum(target, start, mid -1);
+        }
+        else{
+            return false;
+        }
     }
 }
