@@ -5,7 +5,6 @@ import java.util.*;
 
 class template {
     public static void main(String[] args) throws IOException {
-        // 단순 공백 기준 여러개 받기
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         // StringTokenizer st = new StringTokenizer(br.readLine());
 
@@ -27,14 +26,14 @@ class template {
         // int[][] A = new int[N][M];
         // for (int i = 0; i < N; i++) {
         //     st = new StringTokenizer(br.readLine());
-        //     for (int j = 0; j < args.length; j++) {
+        //     for (int j = 0; j < M; j++) {
         //         A[i][j] = Integer.parseInt(st.nextToken());
         //     }
         // }
 
-        solution(0);
+        solution();
     }
 
-    public static void solution(int A) {
+    public static void solution() {
     }
 }
