@@ -24,25 +24,17 @@ class template {
         // }
 
         // --- n * m 2차원 배열 받기
-        // int[][] arr = new int[n][m];
-        // for (int i = 0; i < n; i++) {
-        // String str = br.readLine();
-        // for (int j = 0; j < m; j++) {
-        // arr[i][j] = Integer.parseInt(String.valueOf(str.charAt(j)));
-        // }
-        // }
-        // System.out.print(n + " " + m);
-        // for (int i = 0; i < n; i++) {
-        // for (int j = 0; j < m; j++) {
-        // System.out.print(arr[i][j]);
-        // }
-        // System.out.println();
+        // int[][] A = new int[N][M];
+        // for (int i = 0; i < N; i++) {
+        //     st = new StringTokenizer(br.readLine());
+        //     for (int j = 0; j < args.length; j++) {
+        //         A[i][j] = Integer.parseInt(st.nextToken());
+        //     }
         // }
 
-        System.out.println(solution(0));
+        solution(0);
     }
 
-    public static int solution(int A) {
-        return 0;
+    public static void solution(int A) {
     }
 }
