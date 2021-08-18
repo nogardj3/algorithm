@@ -3,10 +3,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class p_9_3 {
-    static int N, M, start;
+class p_18352 {
+    static int N, M, K, X;
     public static ArrayList<ArrayList<Node>> A = new ArrayList<ArrayList<Node>>();
-    public static int[] distance = new int[100001];
+    public static int[] distance;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -14,17 +14,18 @@ class p_9_3 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        start = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+        X = Integer.parseInt(st.nextToken());
 
+        distance = new int[N + 1];
         for (int i = 0; i <= N; i++) {
             A.add(new ArrayList<Node>());
         }
 
         for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
-
             A.get(Integer.parseInt(st.nextToken()))
-                    .add(new Node(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
+                    .add(new Node(Integer.parseInt(st.nextToken()), 1));
         }
 
         solution();
@@ -33,18 +34,22 @@ class p_9_3 {
     public static void solution() {
         Arrays.fill(distance, (int) 1e9);
 
-        dijkstra(start);
+        dijkstra(X);
 
-        int count = 0;
-        long max = 0;
+        ArrayList<Integer> res = new ArrayList<>();
         for (int i = 1; i <= N; i++) {
-            if (distance[i] <= 1e9) {
-                count++;
-                max = Math.max(max, distance[i]);
+            if (distance[i] == K) {
+                res.add(i);
             }
         }
 
-        System.out.println(count -1 + " " + max);
+        if(res.size() ==0 )
+            System.out.println(-1);
+        else {
+            for (Integer integer : res) {
+                System.out.print(integer + " ");
+            }
+        }
     }
     
     public static void dijkstra(int start) {
@@ -71,7 +76,6 @@ class p_9_3 {
     }
 
     static class Node implements Comparable<Node> {
-    
         private int index;
         private int distance;
     
@@ -96,4 +100,5 @@ class p_9_3 {
             return 1;
         }
     }
+    
 }

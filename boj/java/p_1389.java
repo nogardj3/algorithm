@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class Floyd_warshall {
+class p_1389 {
     static int N, M;
     public static int[][] A;
 
@@ -25,9 +25,12 @@ class Floyd_warshall {
             }
         }
 
-        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < M; i++) {
-            A[Integer.parseInt(st.nextToken())][Integer.parseInt(st.nextToken())] = Integer.parseInt(st.nextToken());
+            st = new StringTokenizer(br.readLine());
+            int from = Integer.parseInt(st.nextToken());
+            int to = Integer.parseInt(st.nextToken());
+            A[from][to] = 1;
+            A[to][from] = 1;
         }
 
         solution();
@@ -42,16 +45,23 @@ class Floyd_warshall {
             }
         }
 
+        ArrayList<Integer> res = new ArrayList<>();
+
+        int min_sum = Integer.MAX_VALUE;
         for (int a = 1; a <= N; a++) {
+            int sum = 0;
             for (int b = 1; b <= N; b++) {
-                if (A[a][b] >= 1e9) {
-                    System.out.print("INFINITY ");
-                }
-                else {
-                    System.out.print(A[a][b] + " ");
-                }
+                sum += A[a][b];
             }
-            System.out.println();
+
+            if (min_sum > sum) {
+                min_sum = sum;
+                res.clear();
+                res.add(a);
+            } else if (min_sum == sum)
+                res.add(a);
         }
+        
+        System.out.println(res.get(0));
     }
 }

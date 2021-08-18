@@ -3,32 +3,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class Node implements Comparable<Node> {
-    private int index;
-    private int distance;
-
-    public Node(int index, int distance) {
-        this.index = index;
-        this.distance = distance;
-    }
-
-    public int getIndex() {
-        return this.index;
-    }
-
-    public int getDistance() {
-        return this.distance;
-    }
-
-    @Override
-    public int compareTo(Node other) {
-        if (this.distance < other.distance) {
-            return -1;
-        }
-        return 1;
-    }
-}
-
 class Dijkstra {
     static int N, M, start;
     public static ArrayList<ArrayList<Node>> A = new ArrayList<ArrayList<Node>>();
@@ -46,8 +20,8 @@ class Dijkstra {
             A.add(new ArrayList<Node>());
         }
 
-        st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < M; i++) {
+            st = new StringTokenizer(br.readLine());
             A.get(Integer.parseInt(st.nextToken()))
                     .add(new Node(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
         }
@@ -56,12 +30,12 @@ class Dijkstra {
     }
 
     public static void solution() {
-        Arrays.fill(distance, Integer.MAX_VALUE);
+        Arrays.fill(distance, (int) 1e9);
 
         dijkstra(start);
 
         for (int i = 1; i <= N; i++) {
-            if (distance[i] == Integer.MAX_VALUE) {
+            if (distance[i] >= 1e9) {
                 System.out.println("INFINITY");
             } else {
                 System.out.println(distance[i]);
@@ -91,4 +65,31 @@ class Dijkstra {
             }
         }
     }
+
+    static class Node implements Comparable<Node> {
+        private int index;
+        private int distance;
+    
+        public Node(int index, int distance) {
+            this.index = index;
+            this.distance = distance;
+        }
+    
+        public int getIndex() {
+            return this.index;
+        }
+    
+        public int getDistance() {
+            return this.distance;
+        }
+    
+        @Override
+        public int compareTo(Node other) {
+            if (this.distance < other.distance) {
+                return -1;
+            }
+            return 1;
+        }
+    }
+    
 }

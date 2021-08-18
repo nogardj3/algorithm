@@ -3,37 +3,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class Node implements Comparable<Node> {
-
-    private int index;
-    private int distance;
-
-    public Node(int index, int distance) {
-        this.index = index;
-        this.distance = distance;
-    }
-
-    public int getIndex() {
-        return this.index;
-    }
-
-    public int getDistance() {
-        return this.distance;
-    }
-
-    @Override
-    public int compareTo(Node other) {
-        if (this.distance < other.distance) {
-            return -1;
-        }
-        return 1;
-    }
-}
-
 class p_9_2 {
-    static int N, M, start;
-    public static ArrayList<ArrayList<Node>> A = new ArrayList<ArrayList<Node>>();
-    public static int[] distance = new int[100001];
+    static int N, M,X,K;
+    public static int[][] A;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -41,55 +13,57 @@ class p_9_2 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        start = Integer.parseInt(st.nextToken());
 
+        A = new int[N+1][N+1];
         for (int i = 0; i <= N; i++) {
-            A.add(new ArrayList<Node>());
+            Arrays.fill(A[i], (int) 1e9);
+        }
+
+        for (int a = 1; a <= N; a++) {
+            for (int b = 1; b <= N; b++) {
+                if (a == b)
+                    A[a][b] = 0;
+            }
+        }
+
+        for (int i = 1; i <= M; i++) {
+            st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+
+            A[a][b] = 1;
+            A[b][a] = 1;
         }
 
         st = new StringTokenizer(br.readLine());
-        for (int i = 0; i < N; i++) {
-            A.get(Integer.parseInt(st.nextToken()))
-                    .add(new Node(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
-        }
+        X = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
 
         solution();
     }
 
     public static void solution() {
-        Arrays.fill(distance, Integer.MAX_VALUE);
-
-        dijkstra(start);
-
-        for (int i = 1; i <= N; i++) {
-            if (distance[i] == Integer.MAX_VALUE) {
-                System.out.println("INFINITY");
-            } else {
-                System.out.println(distance[i]);
-            }
-        }
-    }
-    
-    public static void dijkstra(int start) {
-        PriorityQueue<Node> pq = new PriorityQueue<>();
-        pq.offer(new Node(start, 0));
-        distance[start] = 0;
-        while (!pq.isEmpty()) {
-            Node node = pq.poll();
-            int dist = node.getDistance();
-            int now = node.getIndex();
-
-            if (distance[now] < dist)
-                continue;
-
-            for (int i = 0; i < A.get(now).size(); i++) {
-                int cost = distance[now] + A.get(now).get(i).getDistance();
-
-                if (cost < distance[A.get(now).get(i).getIndex()]) {
-                    distance[A.get(now).get(i).getIndex()] = cost;
-                    pq.offer(new Node(A.get(now).get(i).getIndex(), cost));
+        for (int k = 1; k <= N; k++) {
+            for (int a = 1; a <= N; a++) {
+                for (int b = 1; b <= N; b++) {
+                    A[a][b] = Math.min(A[a][b], A[a][k] + A[k][b]);
                 }
             }
+        }
+
+        System.out.println(A[1][K] + A[K][X] >= 1e9 ? -1 : A[1][K] + A[K][X]);
+
+        
+        for (int a = 1; a <= N; a++) {
+            for (int b = 1; b <= N; b++) {
+                if (A[a][b] == 1e9) {
+                    System.out.print("INFINITY ");
+                }
+                else {
+                    System.out.print(A[a][b] + " ");
+                }
+            }
+            System.out.println();
         }
     }
 }

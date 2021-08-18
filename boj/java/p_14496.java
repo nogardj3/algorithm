@@ -3,14 +3,20 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class Floyd_warshall {
-    static int N, M;
+// FAILED
+
+class p_14496 {
+    static int start, end, N, M;
     public static int[][] A;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
+        start = Integer.parseInt(st.nextToken());
+        end = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
@@ -25,9 +31,13 @@ class Floyd_warshall {
             }
         }
 
-        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < M; i++) {
-            A[Integer.parseInt(st.nextToken())][Integer.parseInt(st.nextToken())] = Integer.parseInt(st.nextToken());
+            st = new StringTokenizer(br.readLine());
+            int from = Integer.parseInt(st.nextToken());
+            int to = Integer.parseInt(st.nextToken());
+
+            A[from][to] = 1;
+            A[to][from] = 1;
         }
 
         solution();
@@ -42,16 +52,20 @@ class Floyd_warshall {
             }
         }
 
-        for (int a = 1; a <= N; a++) {
-            for (int b = 1; b <= N; b++) {
-                if (A[a][b] >= 1e9) {
-                    System.out.print("INFINITY ");
-                }
-                else {
-                    System.out.print(A[a][b] + " ");
-                }
-            }
-            System.out.println();
-        }
+        // for (int a = 1; a <= N; a++) {
+        //     for (int b = 1; b <= N; b++) {
+        //         if (A[a][b] >= 1e9) {
+        //             System.out.print("INFINITY ");
+        //         } else {
+        //             System.out.print(A[a][b] + " ");
+        //         }
+        //     }
+        //     System.out.println();
+        // }
+
+        if (start == end)
+            System.out.println(0);
+        else
+            System.out.println(A[start][end] <= 1e9 ? A[start][end] : -1);
     }
 }
