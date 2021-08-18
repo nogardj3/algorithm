@@ -4,7 +4,6 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class Node implements Comparable<Node> {
-
     private int index;
     private int distance;
 
@@ -30,7 +29,7 @@ class Node implements Comparable<Node> {
     }
 }
 
-class p_9_2 {
+class Dijkstra {
     static int N, M, start;
     public static ArrayList<ArrayList<Node>> A = new ArrayList<ArrayList<Node>>();
     public static int[] distance = new int[100001];
