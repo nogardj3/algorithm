@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class p_11_1 {
+class p_11_4 {
     public static int[] A;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,15 +21,14 @@ class p_11_1 {
     }
 
     public static void solution() {
+        int res = 1;
+
         Arrays.sort(A);
-        int count = 0, res = 0;
 
         for (int i = 0; i < A.length; i++) {
-            count += 1;
-            if (count >= i) {
-                res += 1;
-                count = 0;
-            }
+            if(res<A[i])
+                break;
+            res += A[i];
         }
 
         System.out.println(res);

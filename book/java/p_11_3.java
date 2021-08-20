@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class p_11_2 {
+class p_11_3 {
     public static String S;
 
     public static void main(String[] args) throws IOException {
@@ -16,16 +16,17 @@ class p_11_2 {
     }
 
     public static void solution() {
-        int res =S.charAt(0) - '0';
-        for (char i = 1; i < S.length(); i++) {
-            int num = S.charAt(i) - '0';
+        int count0 = 0, count1 = 0;
 
-            if(res > 1 && num > 1)
-                res *= num;
-            else
-                res += num;
+        for (int i = 0; i < S.length() - 1; i++) {
+            if (S.charAt(i) != S.charAt(i + 1)) {
+                if(S.charAt(i + 1)== '1')
+                    count0 += 1;
+                else
+                    count1 += 1;
+            }
         }
 
-        System.out.println(res);
+        System.out.println(Math.min(count0,count1));
     }
 }
