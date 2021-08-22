@@ -2,8 +2,8 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
-
-class p_12_2 {
+//TODO 문자열 압축
+class q09 {
     public static String N;
 
     public static void main(String[] args) throws IOException {

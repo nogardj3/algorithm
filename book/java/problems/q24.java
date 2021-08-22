@@ -3,35 +3,33 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class p_11_1 {
-    public static int[] A;
+class q24 {
+    static int N;
+    static ArrayList<Integer> A = new ArrayList<>();
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        A = new int[N];
         for (int i = 0; i < N; i++) {
-            A[i] = Integer.parseInt(st.nextToken());
+            A.add(Integer.parseInt(st.nextToken()));
         }
 
         solution();
     }
 
     public static void solution() {
-        Arrays.sort(A);
-        int count = 0, res = 0;
+        if (N == 1)
+            System.out.println(0);
+        else {
+            Collections.sort(A);
 
-        for (int i = 0; i < A.length; i++) {
-            count += 1;
-            if (count >= i) {
-                res += 1;
-                count = 0;
-            }
+            int idx1 = A.get((N - 1) / 2);
+
+            System.out.println(idx1);
         }
-
-        System.out.println(res);
     }
 }

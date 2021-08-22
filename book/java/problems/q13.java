@@ -2,10 +2,10 @@ import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
-//TODO 자물쇠와 열쇠
-class p_12_4 {
+//TODO 치킨 배달
+class q13 {
     public static int N, M;
-    public static int[][] key, lock;
+    public static int[][] city;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -14,20 +14,11 @@ class p_12_4 {
         N = Integer.parseInt(st.nextToken()) ;
         M = Integer.parseInt(st.nextToken());
         
-        key = new int[N][N];
+        city = new int[N][M];
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < N; j++) {
-                key[i][j] = Integer.parseInt(st.nextToken());
-            }
-        }
-
-        
-        lock = new int[N][N];
-        for (int i = 0; i < N; i++) {
-            st = new StringTokenizer(br.readLine());
-            for (int j = 0; j < N; j++) {
-                lock[i][j] = Integer.parseInt(st.nextToken());
+            for (int j = 0; j < M; j++) {
+                city[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 

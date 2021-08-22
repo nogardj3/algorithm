@@ -3,33 +3,29 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class p_11_6 {
-    public static int[] A;
-    public static int N;
+class q02 {
+    public static String S;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        N = Integer.parseInt(st.nextToken());
-
-        st = new StringTokenizer(br.readLine());
-        A = new int[N];
-        for (int i = 0; i < N; i++) {
-            A[i]++;
-        }
+        S = st.nextToken();
 
         solution();
     }
 
     public static void solution() {
-        int sum = 0;
+        int res =S.charAt(0) - '0';
+        for (char i = 1; i < S.length(); i++) {
+            int num = S.charAt(i) - '0';
 
-        for (int i = 1; i < 11; i++) {
-            N -= A[i];
-            sum += N * A[i];
+            if(res > 1 && num > 1)
+                res *= num;
+            else
+                res += num;
         }
 
-        System.out.println(sum);
+        System.out.println(res);
     }
 }

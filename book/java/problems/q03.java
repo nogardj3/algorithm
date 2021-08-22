@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class p_11_3 {
+class q03 {
     public static String S;
 
     public static void main(String[] args) throws IOException {
