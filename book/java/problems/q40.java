@@ -3,67 +3,73 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class q15 {
+class q40 {
+    static int N,M;
     static ArrayList<ArrayList<Integer>> A = new ArrayList<>();
-    static int[] distance;
-    static int N, M, K, X;
-
+    static int[] D;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
-        K = Integer.parseInt(st.nextToken());
-        X = Integer.parseInt(st.nextToken());
 
-        distance = new int[N + 1];
         for (int i = 0; i <= N; i++) {
             A.add(new ArrayList<>());
-            distance[i] = -1;
         }
-
+        
         for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
-
             int x = Integer.parseInt(st.nextToken());
             int y = Integer.parseInt(st.nextToken());
 
             A.get(x).add(y);
+            A.get(y).add(x);
         }
 
         solution();
     }
 
     public static void solution() {
-        bfs();
+        D = new int[N + 1];
 
-        boolean check = false;
         for (int i = 1; i <= N; i++) {
-            if (distance[i] == K) {
-                System.out.println(i);
-                check = true;
-            }
+            Collections.sort(A.get(i));
         }
-
-        if (!check) System.out.println(-1);
-    }
-    
-    public static void bfs() {
+        
         Queue<Integer> q = new LinkedList<>();
-        q.add(X);
-        distance[X] = 0;
+        q.add(1);
+        D[1] = 1;
 
         while (!q.isEmpty()) {
-            int now = q.poll();
+            int next = q.poll();
 
-            for (int i = 0; i < A.get(now).size(); i++) {
-                int next = A.get(now).get(i);
-                if (distance[next] == -1) {
-                    distance[next] = distance[now] + 1;
-                    q.offer(next);
+            for (Integer i : A.get(next)) {
+                if (D[i] == 0) {
+                    q.offer(i);
+                    D[i] = D[next] + 1;
                 }
+                // else
+                //     D[next]+=1;
             }
         }
+
+        int max = Arrays.stream(D).max().getAsInt();
+        ArrayList<Integer> resList = new ArrayList<>();
+        for (int i = 0; i < D.length; i++) {
+            if (D[i] == max) {
+                resList.add(i);
+            }
+        }
+
+        System.out.println(resList.get(0) + " " + (max-1) + " " + resList.size());
+    }
+    
+    static void print() {
+        for (int i = 1; i <= N; i++) {
+            System.out.print(D[i] + " ");
+        }
+        System.out.println();
     }
 }
