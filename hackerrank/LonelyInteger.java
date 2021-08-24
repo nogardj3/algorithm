@@ -32,6 +32,6 @@ class LonelyInteger {
             }
         }
         
-        return (int) integerSet.toArray()[0];
+        return integerSet.iterator().next();
     }
 }

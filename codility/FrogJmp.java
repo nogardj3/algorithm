@@ -4,18 +4,19 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class FrogJmp {
+    static int X, Y, D;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int X = Integer.parseInt(st.nextToken());
-        int Y = Integer.parseInt(st.nextToken());
-        int D = Integer.parseInt(st.nextToken());
+        X = Integer.parseInt(st.nextToken());
+        Y = Integer.parseInt(st.nextToken());
+        D = Integer.parseInt(st.nextToken());
 
-        System.out.println(solution(X, Y, D));
+        solution();
     }
     
-    public static int solution(int X, int Y, int D){
+    public static int solution(){
         if (X == Y) {
             return 0;
         } else {

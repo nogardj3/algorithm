@@ -18,8 +18,6 @@ class DP {
         solution();
     }
 
-
-    
     static void solution() {
         d = new int[N + 1];
         top_down(N);

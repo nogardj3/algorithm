@@ -15,6 +15,9 @@ class fum {
         // ---------- Arrays ----------
         int[] intArray = new int[3];
         Arrays.fill(intArray, -1); // 해당 값으로 채우기
+        Arrays.stream(intArray).sum(); // 합 구하기
+        Arrays.stream(intArray).max().getAsInt(); // 최대 값 구하기
+        Arrays.stream(intArray).min().getAsInt(); // 최소 값 구하기
 
         // ---------- Collections ----------
         ArrayList<Integer> intArrayList = new ArrayList<>();

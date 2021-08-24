@@ -4,23 +4,25 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class CyclicRotation {
+    static int N,K;
+    static int[] A;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int n = 0;
-        int[] A = new int[n];
-        for (int i = 0; i < n; i++) {
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
+
+        A = new int[N];
+        for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
-        st = new StringTokenizer(br.readLine());
-        int K = Integer.parseInt(st.nextToken());
-
-        System.out.println(solution(A, K));
+        solution();
     }
 
-    public static int[] solution(int[] A, int K) {
+    public static int[] solution() {
         if (K == 0 || A.length == 0) {
             return A;
         } else {
