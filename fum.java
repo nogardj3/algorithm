@@ -3,6 +3,10 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
 
 // Frequently Used Methods
 
@@ -42,6 +46,18 @@ class fum {
         System.out.printf("%s %n", stringBuilder.toString());
 
         // ---------- Regular Expresssion ----------
+        System.out.println("aaa123".matches("a*[0-9]*")); // 단순 매치
+        // * Matcher 사용
+        Pattern pattern = Pattern.compile("\\bcat\\b");
+        Matcher matcher = pattern.matcher("cat cat cat cattie cat");
+        int count = 0;
+        while (matcher.find()) {
+            count++;
+            System.out.println("Match number " + count);
+            System.out.println("group(): " + matcher.group());
+            System.out.println("start(): " + matcher.start());
+            System.out.println("end(): " + matcher.end());
+        }
 
         // ---------- Calendar ----------
         Calendar calendar = Calendar.getInstance();
