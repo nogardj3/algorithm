@@ -4,22 +4,24 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class JesseandCookies {
+    static int n, k;
+    static List<Integer> A = new ArrayList<>();
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        n = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        ArrayList<Integer> A = new ArrayList<>();
-        for (int i = 0; i < N; i++) {
+        for (int i = 0; i < n; i++) {
             A.add(Integer.parseInt(st.nextToken()));
         }
 
-        // solution(A);
+        solution();
     }
     
-    public static int solution(int k, List<Integer> A) {
+    public static int solution() {
         if (A.size() == 1) {
             return -1;
         }

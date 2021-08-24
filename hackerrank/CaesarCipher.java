@@ -4,22 +4,20 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class CaesarCipher {
+    static int k;
+    static String s;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        s = st.nextToken();
+        k = Integer.parseInt(st.nextToken());
 
-        st = new StringTokenizer(br.readLine());
-        ArrayList<Integer> A = new ArrayList<>();
-        for (int i = 0; i < N; i++) {
-            A.add(Integer.parseInt(st.nextToken()));
-        }
-
-        // solution(A);
+        solution();
     }
     
-    public static String solution(String s, int k) {
+    public static String solution() {
         StringBuffer res = new StringBuffer();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z') {

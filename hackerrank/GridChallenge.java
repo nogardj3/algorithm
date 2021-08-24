@@ -4,31 +4,29 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class GridChallenge {
+    static int N;
+    static List<String> grid = new ArrayList<>();
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        ArrayList<Integer> A = new ArrayList<>();
         for (int i = 0; i < N; i++) {
-            A.add(Integer.parseInt(st.nextToken()));
+            grid.add(st.nextToken());
         }
 
-        // solution(A);
+        solution();
     }
     
-    public static String solution(List<String> grid) {
+    public static String solution() {
         List<String> sortedlList = new ArrayList<>();
         for (String string : grid) {
             char[] charArr = string.toCharArray();
             Arrays.sort(charArr);
             sortedlList.add(new String(charArr));
-        }
-
-        for (String string : sortedlList) {
-            System.out.println(string);
         }
 
         boolean is_asc = true;

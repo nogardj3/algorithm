@@ -4,16 +4,17 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class TimeConversion {
+    static String s;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        String S = st.nextToken();
+        s = st.nextToken();
 
-        solution(S);
+        solution();
     }
     
-    public static void solution(String s) {
+    public static void solution() {
         int pre = Integer.valueOf(s.substring(0, 2));
         if (s.contains("PM")) {
             if (pre == 12) {

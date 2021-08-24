@@ -4,6 +4,8 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class CountingSort1 {
+    static List<Integer> arr = new ArrayList<>();
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -11,15 +13,15 @@ class CountingSort1 {
         int N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        ArrayList<Integer> A = new ArrayList<>();
+        arr = new ArrayList<>();
         for (int i = 0; i < N; i++) {
-            A.add(Integer.parseInt(st.nextToken()));
+            arr.add(Integer.parseInt(st.nextToken()));
         }
 
-        // solution(A);
+        solution();
     }
     
-    public static List<Integer> solution(List<Integer> arr) {
+    public static List<Integer> solution() {
         List<Integer> iarray = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {

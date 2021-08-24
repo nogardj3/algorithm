@@ -4,24 +4,26 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class FindTheMedian {
+    static int N;
+    static ArrayList<Integer> arr = new ArrayList<>();
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        ArrayList<Integer> A = new ArrayList<>();
         for (int i = 0; i < N; i++) {
-            A.add(Integer.parseInt(st.nextToken()));
+            arr.add(Integer.parseInt(st.nextToken()));
         }
 
-        solution(A);
+        solution();
     }
     
-    public static void solution(List<Integer> arr) {
+    public static int solution() {
         Collections.sort(arr);
 
-        
+        return arr.get(N/2);
     }
 }

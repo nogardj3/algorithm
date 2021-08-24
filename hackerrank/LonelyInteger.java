@@ -4,6 +4,8 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class LonelyInteger {
+    static List<Integer> arr = new ArrayList<>();
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -20,24 +22,16 @@ class LonelyInteger {
     }
     
     public static int solution(List<Integer> arr) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Set<Integer> integerSet = new HashSet<>();
 
         for (Integer integer : arr) {
-            if (map.containsKey(integer)) {
-                map.put(integer, map.get(integer) + 1);
+            if (integerSet.contains(integer)) {
+                integerSet.remove(integer);
             } else {
-                map.put(integer, 1);
+                integerSet.add(integer);
             }
         }
         
-        int res = -1;
-        for (Integer integer : map.keySet()) {
-            if (map.get(integer) % 2 == 1) {
-                res = integer;
-                return res;
-            }
-        }
-        
-        return res;
+        return (int) integerSet.toArray()[0];
     }
 }

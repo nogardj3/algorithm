@@ -34,8 +34,4 @@ class SimpleTextEditor {
             }
         }
     }
-    
-    public static int solution(int Q) {
-        return 0;
-    }
 }

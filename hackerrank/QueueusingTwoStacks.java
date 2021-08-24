@@ -3,16 +3,16 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-class QueueusingTwoStacks {
+class QueueUsingTwoStacks {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int Q = Integer.parseInt(st.nextToken());
+        int q = Integer.parseInt(st.nextToken());
 
         Queue<Integer> queue = new LinkedList<>();
 
-        for (int i = 0; i < Q; i++) {
+        for (int i = 0; i < q; i++) {
             st = new StringTokenizer(br.readLine());
             int op = Integer.parseInt(st.nextToken());
             if (op == 1) {
@@ -25,9 +25,5 @@ class QueueusingTwoStacks {
                 System.out.println(queue.peek());
             }
         }
-    }
-    
-    public static int solution(int Q) {
-        return 0;
     }
 }

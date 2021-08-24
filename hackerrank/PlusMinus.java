@@ -4,6 +4,8 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class PlusMinus {
+    static List<Integer> arr = new ArrayList<>();
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -11,15 +13,14 @@ class PlusMinus {
         int N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[N];
         for (int i = 0; i < N; i++) {
-            A[i] = Integer.parseInt(st.nextToken());
+            arr.add(Integer.parseInt(st.nextToken()));
         }
 
-        // solution(A);
+        solution();
     }
     
-    public static void solution(List<Integer> arr) {
+    public static void solution() {
         int plus_count = 0;
         int minus_count = 0;
         int zero_count = 0;
@@ -39,8 +40,5 @@ class PlusMinus {
         System.out.println();
         System.out.printf("%.6f",(float)zero_count / (float)arr.size());
         System.out.println();
-
-        return ;
     }
-    
 }

@@ -4,22 +4,20 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class RecursiveDigitSum {
+    static String n;
+    static int k;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        n = st.nextToken();
+        k = Integer.parseInt(st.nextToken());
 
-        st = new StringTokenizer(br.readLine());
-        ArrayList<Integer> A = new ArrayList<>();
-        for (int i = 0; i < N; i++) {
-            A.add(Integer.parseInt(st.nextToken()));
-        }
-
-        // solution(A);
+        solution();
     }
     
-    public static int solution(String n, int k) {
+    public static int solution() {
         char[] carray = n.toCharArray();
 
         long sum = 0;
