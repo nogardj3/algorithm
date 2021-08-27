@@ -22,9 +22,9 @@ class PermMissingElem {
         solution();
     }
     
-    public static int solution() {
+    public static void solution() {
         if (A.length == 0) {
-            return 0;
+            System.out.println(0);
         } else {
             int[] tmp = new int[A.length + 1];
             for (int i = 0; i < A.length; i++) {
@@ -39,7 +39,7 @@ class PermMissingElem {
                 }
             }
 
-            return res;
+            System.out.println(res);
         }
     }
 }

@@ -22,13 +22,13 @@ class AbsDistinct {
         solution();
     }
     
-    public static int solution() {
+    public static void solution() {
         Set<Integer> num_set = new HashSet<>();
 
         for (int integer : A) {
             num_set.add(Math.abs(integer));
         }
 
-        return num_set.size();
+        System.out.println(num_set.size());
     }
 }

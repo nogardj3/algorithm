@@ -6,7 +6,7 @@ import java.util.*;
 class OddOccurrencesInArray {
     static int N;
     static int[] A;
-    
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -21,11 +21,11 @@ class OddOccurrencesInArray {
         solution();
     }
     
-    public static int solution() {
+    public static void solution() {
         Set<Integer> res_set = new HashSet<Integer>();
 
         if (A.length == 1) {
-            return A[0];
+            System.out.println(A[0]);
         } else {
             for (int i = 0; i < A.length; i++) {
                 if (res_set.contains(A[i]))
@@ -34,7 +34,7 @@ class OddOccurrencesInArray {
                     res_set.add(A[i]);
             }
 
-            return res_set.iterator().next();
+            System.out.println(res_set.iterator().next());
         }
     }
 }
