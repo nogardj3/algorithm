@@ -5,6 +5,7 @@ import java.util.*;
 
 class TimeConversion {
     static String s;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

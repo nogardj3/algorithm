@@ -17,7 +17,7 @@ class RecursiveDigitSum {
         solution();
     }
     
-    public static int solution() {
+    public static void solution() {
         char[] carray = n.toCharArray();
 
         long sum = 0;
@@ -38,6 +38,6 @@ class RecursiveDigitSum {
             sum = temp_sum;
         }
         
-        return (int) sum;
+        System.out.println(sum);
     }
 }

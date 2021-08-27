@@ -32,8 +32,6 @@ class MiniMaxSum {
         }
 
         System.out.println((sum - max) + " " + (sum - min));
-
-        return ;
     }
     
 }

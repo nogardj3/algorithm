@@ -17,7 +17,7 @@ class CaesarCipher {
         solution();
     }
     
-    public static String solution() {
+    public static void solution() {
         StringBuffer res = new StringBuffer();
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) >= 'a' && s.charAt(i) <= 'z') {
@@ -40,6 +40,6 @@ class CaesarCipher {
                 res.append((char) (s.charAt(i))) ;
         }
 
-        return res.toString();
+        System.out.println(res.toString());
     }
 }

@@ -21,9 +21,9 @@ class JesseandCookies {
         solution();
     }
     
-    public static int solution() {
+    public static void solution() {
         if (A.size() == 1) {
-            return -1;
+            System.out.println(-1);
         }
         else {
             PriorityQueue<Integer> pQueue = new PriorityQueue<>(A);
@@ -36,7 +36,7 @@ class JesseandCookies {
                 count++;
             }
 
-            return count;
+            System.out.println(count);
         }
     }
 }

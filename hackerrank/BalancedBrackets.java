@@ -15,30 +15,27 @@ class BalancedBrackets {
         solution();
     }
     
-    public static String solution() {
+    public static void solution() {
         Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < s.length(); i++) {
             char bracket = s.charAt(i);
-            
-            if(bracket == '{'|| bracket == '(' ||bracket == '['){
+
+            if (bracket == '{' || bracket == '(' || bracket == '[') {
                 stack.add(bracket);
-            }
-            else {
+            } else {
                 if (stack.isEmpty()) {
-                    return "NO";
+                    System.out.println("NO");
                 }
 
                 char poped = stack.pop();
-                if(poped == '{' && bracket == '}'||
-                    poped == '(' && bracket == ')'||
-                    poped == '[' && bracket == ']') {
-                }
-                else
-                    return "NO";
+                if (poped == '{' && bracket == '}' || poped == '(' && bracket == ')'
+                        || poped == '[' && bracket == ']') {
+                } else
+                    System.out.println("NO");
             }
         }
 
-        return stack.isEmpty() ? "YES" : "NO";
+        System.out.println(stack.isEmpty() ? "YES" : "NO");
     }
 }

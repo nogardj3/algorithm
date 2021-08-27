@@ -21,9 +21,9 @@ class FindTheMedian {
         solution();
     }
     
-    public static int solution() {
+    public static void solution() {
         Collections.sort(arr);
 
-        return arr.get(N/2);
+        System.out.println(arr.get(N/2));
     }
 }

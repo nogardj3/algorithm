@@ -21,7 +21,7 @@ class CountingSort1 {
         solution();
     }
     
-    public static List<Integer> solution() {
+    public static void solution() {
         List<Integer> iarray = new ArrayList<>();
 
         for (int i = 0; i < 100; i++) {
@@ -32,6 +32,6 @@ class CountingSort1 {
             iarray.set(integer, iarray.get(integer) + 1);
         }
 
-        return iarray;
+        System.out.println(iarray.toString());
     }
 }

@@ -13,15 +13,15 @@ class LonelyInteger {
         int N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        ArrayList<Integer> A = new ArrayList<>();
+        arr = new ArrayList<>();
         for (int i = 0; i < N; i++) {
-            A.add(Integer.parseInt(st.nextToken()));
+            arr.add(Integer.parseInt(st.nextToken()));
         }
 
-        solution(A);
+        solution();
     }
     
-    public static int solution(List<Integer> arr) {
+    public static void solution() {
         Set<Integer> integerSet = new HashSet<>();
 
         for (Integer integer : arr) {
@@ -32,6 +32,6 @@ class LonelyInteger {
             }
         }
         
-        return integerSet.iterator().next();
+        System.out.println(integerSet.iterator().next());
     }
 }

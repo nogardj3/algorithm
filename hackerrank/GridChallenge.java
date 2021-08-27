@@ -21,7 +21,7 @@ class GridChallenge {
         solution();
     }
     
-    public static String solution() {
+    public static void solution() {
         List<String> sortedlList = new ArrayList<>();
         for (String string : grid) {
             char[] charArr = string.toCharArray();
@@ -38,10 +38,10 @@ class GridChallenge {
                     break;
                 }
             }
-            if(!is_asc)
+            if (!is_asc)
                 break;
         }
         
-        return is_asc ? "YES" : "NO";
+        System.out.println(is_asc ? "YES" : "NO");
     }
 }

@@ -26,7 +26,7 @@ class DiagonalDifference {
         solution();
     }
     
-    public static int solution() {
+    public static void solution() {
         int lr = 0;
         for (int i = 0; i < arr.size(); i++) {
             lr += arr.get(i).get(i);
@@ -37,6 +37,6 @@ class DiagonalDifference {
             rl = arr.get(i).get(arr.get(i).size() - 1 - i);
         }
     
-        return Math.abs((lr - rl));
+        System.out.println(Math.abs((lr - rl)));
     }
 }
