@@ -5,8 +5,8 @@ import java.util.*;
 
 class p_18352 {
     static int N, M, K, X;
-    public static ArrayList<ArrayList<Node>> A = new ArrayList<ArrayList<Node>>();
-    public static int[] distance;
+    static ArrayList<ArrayList<Node>> A = new ArrayList<ArrayList<Node>>();
+    static int[] distance;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -52,7 +52,7 @@ class p_18352 {
         }
     }
     
-    public static void dijkstra(int start) {
+    static void dijkstra(int start) {
         PriorityQueue<Node> pq = new PriorityQueue<>();
         pq.offer(new Node(start, 0));
         distance[start] = 0;

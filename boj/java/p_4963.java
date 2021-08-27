@@ -28,11 +28,9 @@ class p_4963 {
                     A[i][j] = Integer.parseInt(st.nextToken());
                 }
             }
-            
 
             solution();
         }
-
     }
 
     public static void solution() {
@@ -72,7 +70,7 @@ class p_4963 {
         }
     }
 
-    public static class Node {
+    static class Node {
         int x;
         int y;
 

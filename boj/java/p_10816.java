@@ -41,14 +41,9 @@ class p_10816 {
             // System.out.print(0 + " ");
         }
         System.out.println(sb.toString());
-
-        // solution();
     }
 
     public static void solution() {
 
-    }
-
-    public static void findMax(long start, long end) {
     }
 }

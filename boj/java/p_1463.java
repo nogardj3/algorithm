@@ -12,7 +12,6 @@ class p_1463 {
         StringTokenizer st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
 
-
         solution();
     }
 

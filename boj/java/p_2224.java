@@ -5,7 +5,7 @@ import java.util.*;
 
 class p_2224 {
     static int N, M;
-    public static int[][] A;
+    static int[][] A;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

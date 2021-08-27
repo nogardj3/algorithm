@@ -8,6 +8,7 @@ class p_11724 {
     static boolean[] check;
     static int N,V;
     static int sector_size;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         

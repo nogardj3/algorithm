@@ -5,6 +5,7 @@ import java.util.*;
 
 class p_10814 {
     static ArrayList<User> A;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -39,7 +40,7 @@ class p_10814 {
         }
     }
     
-    public static class User {
+    static class User {
         int age;
         String name;
 

@@ -43,7 +43,7 @@ class Dijkstra {
         }
     }
     
-    public static void dijkstra(int start) {
+    static void dijkstra(int start) {
         PriorityQueue<Node> pq = new PriorityQueue<>();
         pq.offer(new Node(start, 0));
         distance[start] = 0;

@@ -6,7 +6,6 @@ import java.util.*;
 class p_11403 {
     static int N;
     static int[][] A;
-
     static ArrayList<Integer> home = new ArrayList<>(), con = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {

@@ -14,7 +14,6 @@ class p_1003 {
         N = Integer.parseInt(st.nextToken());
 
         makeFib(41);
-        
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
@@ -23,14 +22,12 @@ class p_1003 {
             System.out.println(A.get(num).zero_cnt + " " + A.get(num).one_cnt);
             
         }
-
-        solution();
     }
 
     public static void solution() {
     }
 
-    public static void makeFib(int last) {
+    static void makeFib(int last) {
         A = new ArrayList<>();
         A.add(new Sums(1, 0));
         A.add(new Sums(0, 1));
@@ -42,7 +39,7 @@ class p_1003 {
         
     }
     
-    public static class Sums {
+    static class Sums {
         int zero_cnt;
         int one_cnt;
 

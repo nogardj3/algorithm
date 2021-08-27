@@ -34,7 +34,7 @@ class p_2805 {
             findMax(1, max);
     }
 
-    public static void findMax(long start, long end) {
+    static void findMax(long start, long end) {
         long mid =  (start + end) / 2;
 
         if (start > end || mid == 0) {
@@ -51,7 +51,7 @@ class p_2805 {
         }
     }
 
-    public static long getSum(long mid) {
+    static long getSum(long mid) {
         long sum = 0;
         for (Integer integer : A) {
             if(integer - mid> 0)

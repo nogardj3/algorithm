@@ -76,7 +76,7 @@ class p_7576 {
         }
     }
 
-    public static class Node {
+    static class Node {
         int x;
         int y;
 

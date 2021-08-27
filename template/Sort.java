@@ -19,7 +19,7 @@ class Sort {
         }
     }
 
-    public static class Item implements Comparable<Item> {
+    static class Item implements Comparable<Item> {
         private String mText;
         private int value1;
         private int value2;

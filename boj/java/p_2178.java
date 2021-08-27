@@ -66,7 +66,7 @@ class p_2178 {
         }
     }
 
-    public static class Node {
+    static class Node {
         int x;
         int y;
 

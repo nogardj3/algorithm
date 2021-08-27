@@ -37,7 +37,4 @@ class p_2579 {
 
         System.out.println(DP[N]);
     }
-
-    public static void makeFib(int last) {
-    }
 }

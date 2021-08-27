@@ -6,7 +6,6 @@ import java.util.*;
 class p_1920 {
     static int N,M;
     static Set<Integer> A;
-    
     static int temp =0;
 
     public static void main(String[] args) throws IOException {
@@ -30,8 +29,6 @@ class p_1920 {
             else
                 System.out.println(0);
         }
-
-        // solution();
     }
 
     public static void solution() {

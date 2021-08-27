@@ -7,7 +7,7 @@ import java.util.*;
 
 class p_14496 {
     static int start, end, N, M;
-    public static int[][] A;
+    static int[][] A;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -51,17 +51,6 @@ class p_14496 {
                 }
             }
         }
-
-        // for (int a = 1; a <= N; a++) {
-        //     for (int b = 1; b <= N; b++) {
-        //         if (A[a][b] >= 1e9) {
-        //             System.out.print("INFINITY ");
-        //         } else {
-        //             System.out.print(A[a][b] + " ");
-        //         }
-        //     }
-        //     System.out.println();
-        // }
 
         if (start == end)
             System.out.println(0);

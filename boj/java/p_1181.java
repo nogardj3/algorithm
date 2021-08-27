@@ -5,6 +5,7 @@ import java.util.*;
 
 class p_1181 {
     static ArrayList<String> A;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
