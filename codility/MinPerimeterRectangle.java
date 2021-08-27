@@ -4,24 +4,26 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class MinPerimeterRectangle {
+    static int N;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
-        System.out.println(solution(N));
+        solution();
     }
     
-    public static int solution(int N) {
+    public static void solution() {
         if (N == 1)
-            return 4;
+            System.out.println(4);
         int min = Integer.MAX_VALUE;
         for (int i = 1; i <= Math.sqrt(N); i++)
             if (N % i == 0) {
                 min = Math.min(min, 2 * (i + N / i));
             }
 
-        return min;
+        System.out.println(min);
     }
 }

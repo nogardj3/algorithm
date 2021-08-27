@@ -4,18 +4,20 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class Nesting {
+    static String S;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        String S = st.nextToken();
+        S = st.nextToken();
 
-        System.out.println(solution(S));
+        solution();
     }
     
-    public static int solution(String S) {
+    public static void solution() {
         if(S.length()== 0)
-            return 1;
+            System.out.println(1);
 
         int res = 1;
 
@@ -37,6 +39,6 @@ class Nesting {
         if (cStack.size() != 0)
             res = 0;
 
-        return res;
+        System.err.println(res);
     }
 }

@@ -3,40 +3,56 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// FAILED
-
 class MaxCounters {
+    static int N, M;
+    static int[] A;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int M = Integer.parseInt(st.nextToken());
+        M = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[M];
+        A = new int[M];
         for (int i = 0; i < M; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(solution(N, A));
+        solution();
     }
     
-    public static int[] solution(int N, int[] A) {
-        int[] res_arr = new int[N];
-
-        int max = 0;
-        for (int i : A) {
-            if (i >= 1 && i <= N) {
-                res_arr[i - 1]++;
-                max = Math.max(max, res_arr[i - 1]);
-            } else if (i == N + 1) {
-                Arrays.fill(res_arr, max);
+    public static void solution() {
+        int currentMax = 0;
+        int lastCalledMax = 0;
+        int[] counters = new int[N];
+    
+        for (int i = 0; i < A.length; i++) {
+            if (A[i] == N + 1) {
+                lastCalledMax = currentMax;
+            } else {
+                int counter = A[i] - 1;
+                if (counters[counter] < lastCalledMax) {
+                    counters[counter] = lastCalledMax + 1;
+                } else {
+                    counters[counter]++;
+                }
+    
+                if (counters[counter] > currentMax) {
+                    currentMax = counters[counter];
+                }
+            }
+        }
+    
+        for (int i = 0; i < N; i++) {
+            if (counters[i] < lastCalledMax) {
+                counters[i] = lastCalledMax;
             }
         }
 
-        return res_arr;
+        System.out.println(Arrays.toString(counters));
     }
 }

@@ -22,9 +22,9 @@ class TapeEquilibrium {
         solution();
     }
     
-    public static int solution() {
+    public static void solution() {
         if (A.length == 2) {
-            return Math.abs(A[0] - A[1]);
+            System.out.println(Math.abs(A[0] - A[1]));
         } else {
             int pre_sum = 0;
             int tail_sum = Arrays.stream(A).sum();
@@ -36,7 +36,7 @@ class TapeEquilibrium {
                 min = Math.min(Math.abs(pre_sum - tail_sum), min);
             }
 
-            return min;
+            System.out.println(min);
         }
     }
 }

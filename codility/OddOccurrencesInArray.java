@@ -6,6 +6,7 @@ import java.util.*;
 class OddOccurrencesInArray {
     static int N;
     static int[] A;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

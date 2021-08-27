@@ -4,22 +4,25 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class StoneWall {
+    static int N;
+    static int[] H;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] H = new int[N];
+        H = new int[N];
         for (int i = 0; i < N; i++) {
             H[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(solution(H));
+        solution();
     }
     
-    public static int solution(int[] H) {
+    public static void solution() {
         int res = 0;
 
         Stack<Integer> iStack = new Stack<Integer>();
@@ -40,6 +43,6 @@ class StoneWall {
                 iStack.push(H[i]);
         }
         
-        return res + iStack.size();
+        System.out.println(res + iStack.size());
     }
 }

@@ -4,22 +4,25 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class MaxDoubleSliceSum {
+    static int N;
+    static int[] A;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[N];
+        A = new int[N];
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(solution(A));
+        solution();
     }
     
-    public static int solution(int[] A) {
+    public static void solution() {
         int[] inc_arr = new int[A.length];
         int[] dec_arr = new int[A.length];
 
@@ -36,6 +39,6 @@ class MaxDoubleSliceSum {
             res = Math.max(inc_arr[i - 1] + dec_arr[i + 1], res);
         }
         
-        return res;
+        System.out.println(res);
     }
 }

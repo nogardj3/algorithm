@@ -3,25 +3,26 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// FAILED
-
 class Peaks {
+    static int N;
+    static int[] A;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[N];
+        A = new int[N];
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(solution(A));
+        solution();
     }
     
-    public static int solution(int[] A) {
+    public static void solution() {
         List<Integer> peaksIndexList = new ArrayList<>();
         
         for(int i=1; i<A.length-1; i++){
@@ -29,11 +30,8 @@ class Peaks {
                 peaksIndexList.add(i);
             }
         }
-        
-        int N = A.length;
 
         for(int numBlocks =N; numBlocks >=1; numBlocks--){
-                    
             if( N % numBlocks ==0){
                 int blockSize = N / numBlocks; 
                 int ithOkBlock =0;
@@ -45,11 +43,11 @@ class Peaks {
                 }   
                 
                 if(ithOkBlock == numBlocks){
-                    return numBlocks;
+                    System.out.println(numBlocks);
                 }
             }
         }   
         
-        return 0;
+        System.out.println(0);
     }
 }
