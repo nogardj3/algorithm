@@ -3,34 +3,36 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// FAILED
-
 class GenomicRangeQuery {
+    static String S;
+    static int N;
+    static int[] P,Q;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        String S = st.nextToken();
+        S = st.nextToken();
         
         st = new StringTokenizer(br.readLine());
-        int n = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] P = new int[n];
+        P = new int[N];
         for (int i = 0; i < 0; i++) {
             P[i] = Integer.parseInt(st.nextToken());
         }
 
         st = new StringTokenizer(br.readLine());
-        int[] Q = new int[n];
+        Q = new int[N];
         for (int i = 0; i < 0; i++) {
             Q[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(solution(S, P, Q));
+        solution();
     }
     
-    public static int[] solution(String S, int[] P, int[] Q) {
+    public static void solution() {
         Map<Character, Integer> map = new HashMap<>();
         map.put('A', 1);
         map.put('C', 2);
@@ -46,8 +48,9 @@ class GenomicRangeQuery {
             result[i] = maxVal;
         }
         for (int i = 0; i < result.length; i++) {
-            result[i] = map.get((char)result[i]);
+            result[i] = map.get((char) result[i]);
         }
-        return result;
+        
+        System.out.println(Arrays.toString(result));
     }
 }

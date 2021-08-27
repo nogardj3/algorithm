@@ -5,6 +5,7 @@ import java.util.*;
 
 class FrogJmp {
     static int X, Y, D;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -16,15 +17,15 @@ class FrogJmp {
         solution();
     }
     
-    public static int solution(){
+    public static void solution(){
         if (X == Y) {
-            return 0;
+            System.out.println(0);
         } else {
             int res = (Y - X) / D;
             if ((Y - X) % D != 0)
                 res += 1;
 
-            return res;
+            System.out.println(res);
         }
     }
 }

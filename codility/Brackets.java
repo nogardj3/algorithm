@@ -4,16 +4,18 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class Brackets {
+    static String S;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        String S = st.nextToken();
+        S = st.nextToken();
 
-        System.out.println(solution(S));
+        solution();
     }
     
-    public static int solution(String S) {
+    public static void solution() {
         int res = 1;
 
         Map<Character, Character> char_map = new HashMap<>();
@@ -41,6 +43,6 @@ class Brackets {
             res = 0;
         }
 
-        return res;
+        System.out.println(res);
     }
 }

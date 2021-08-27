@@ -6,29 +6,31 @@ import java.util.*;
 // FAILED
 
 class CommonPrimeDivisors {
+    static int N;
+    static int[] A, B;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[N];
+        A = new int[N];
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
         st = new StringTokenizer(br.readLine());
-        int[] B = new int[N];
+        B = new int[N];
         for (int i = 0; i < N; i++) {
             B[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(solution(A, B));
-        // System.out.println(Arrays.toString(solution(N,P,Q)));
+        solution();
     }
     
-    public static int solution(int[] A, int[] B) {
+    public static void solution() {
         int count = 0;
         for (int i = 0; i < B.length; i++) {
             if (hasSamePrimeDivisors(A[i], B[i])) {
@@ -36,7 +38,7 @@ class CommonPrimeDivisors {
             }
         }
 
-        return count;
+        System.out.println(count);
     }
     
     public static int gcd(int a, int b) {

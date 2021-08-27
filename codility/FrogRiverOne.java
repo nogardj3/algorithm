@@ -4,22 +4,25 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 class FrogRiverOne {
+    static int X;
+    static int[] A;
+    
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int X = Integer.parseInt(st.nextToken());
+        X = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[0];
+        A = new int[0];
         for (int i = 0; i < 0; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(solution(X, A));
+        solution();
     }
 
-    public static int solution(int X, int[] A) {
+    public static void solution() {
         Set<Integer> temp_set = new HashSet<>();
 
         int res = -1;
@@ -30,6 +33,7 @@ class FrogRiverOne {
                 break;
             }
         }
-        return res;
+
+        System.out.println(res);
     }
 }

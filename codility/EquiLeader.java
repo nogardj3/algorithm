@@ -3,25 +3,25 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// FAILED
-
 class EquiLeader {
+    static int N;
+    static int A[];
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] A = new int[N];
+        A = new int[N];
         for (int i = 0; i < N; i++) {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
-        System.out.println(solution(A));
+        solution();
     }
     
-    public static int solution(int[] A) {
+    public static void solution() {
         int res = 0;
         int most_val = 0;
 
@@ -56,11 +56,11 @@ class EquiLeader {
             int RightCount = record.lastElement() - LeftCount;
             int limitEquiLeft = ((i + 1) / 2) + 1;
             int limitEquiRight = ((A.length - (i + 1)) / 2) + 1;
-            if ((LeftCount >= limitEquiLeft) && (RightCount >= limitEquiRight)) 
-            {
+            if ((LeftCount >= limitEquiLeft) && (RightCount >= limitEquiRight)) {
                 ++res;
             }
         }
-        return res;
+        
+        System.out.println(res);
     }
 }

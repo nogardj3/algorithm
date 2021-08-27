@@ -22,9 +22,9 @@ class CyclicRotation {
         solution();
     }
 
-    public static int[] solution() {
+    public static void solution() {
         if (K == 0 || A.length == 0) {
-            return A;
+            System.out.println(Arrays.toString(A));
         } else {
             K = K % A.length;
             int[] res = new int[A.length];
@@ -32,7 +32,7 @@ class CyclicRotation {
                 res[i] = A[(A.length + i - K) % A.length];
             }
 
-            return res;
+            System.out.println(Arrays.toString(res));
         }
     };
 }

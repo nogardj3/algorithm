@@ -6,29 +6,31 @@ import java.util.*;
 // FAILED
 
 class CountSemiprimes {
+    static int N;
+    static int[] P, Q;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        N = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(br.readLine());
-        int[] P = new int[N];
+        P = new int[N];
         for (int i = 0; i < N; i++) {
             P[i] = Integer.parseInt(st.nextToken());
         }
 
         st = new StringTokenizer(br.readLine());
-        int[] Q = new int[N];
+        Q = new int[N];
         for (int i = 0; i < N; i++) {
             Q[i] = Integer.parseInt(st.nextToken());
         }
 
-        // System.out.println(solution(A));
-        System.out.println(Arrays.toString(solution(N,P,Q)));
+        solution();
     }
     
-    public static int[] solution(int N, int[] P, int[] Q) {
+    public static void solution() {
         int[] array = new int[50001];
         int[] flag = new int[50001];
         array[1] = 1;
@@ -59,6 +61,6 @@ class CountSemiprimes {
             ans[i] = flag[Q[i]] - flag[P[i] - 1];
         }
 
-        return ans;
+        System.out.println(Arrays.toString(ans));
     }
 }
