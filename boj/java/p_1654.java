@@ -42,7 +42,6 @@ class p_1654 {
         }
 
         long sum = getSum(mid);
-        // System.out.println(start+ " "+ mid + " "+ end + " "+ sum);
         if (sum < M) {
             findMax(start, (int) mid - 1);
         }

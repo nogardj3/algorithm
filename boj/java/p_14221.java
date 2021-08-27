@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// FAILED
+// FAILED 문제가 뭐지?
 
 class p_14221 {
     static int start, end, N, M;

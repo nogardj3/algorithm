@@ -40,13 +40,23 @@ class p_10814 {
         }
     }
     
-    static class User {
+    static class User implements Comparable<User> {
         int age;
         String name;
 
         public User(int _age, String _name) {
             age = _age;
             name = _name;
+        }
+
+        @Override
+        public int compareTo(User right) {
+            if (age > right.age)
+            return 1;
+        else if(age < right.age)
+            return -1;
+        else 
+            return 0;
         }
     }
 }

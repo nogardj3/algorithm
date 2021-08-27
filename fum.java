@@ -83,9 +83,9 @@ class fum {
         System.out.printf("%o %d %x %.2f %c %s %n", 0, 10, 10, 0.3f, 36, "string");
         int[] fooArray = new int[3];
         System.out.println(Arrays.toString(fooArray)); // 1차원 Array
-        int[][] fooArray2D = new int[3][3]; // 2차원 Array
+        int[][] fooArray2D = new int[3][3]; 
+        System.out.println(Arrays.deepToString(fooArray2D)); // 2차원 Array
         printArray2D(fooArray2D); // 2차원 Array + line break
-        System.out.println(Arrays.deepToString(fooArray2D)); 
         System.out.println(intArrayList.toString()); // 1차원 arraylist 출력
         ArrayList<ArrayList<Integer>> fooArrayList2D = new ArrayList<>();
         printArrayList2D(fooArrayList2D); // 2차원 arraylist 출력
@@ -94,7 +94,7 @@ class fum {
     static void printArray2D(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                System.out.printf("%d ", array[i]);
+                System.out.printf("%d ", array[i][j]);
             }
             System.out.println();
         }

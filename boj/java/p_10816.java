@@ -35,10 +35,8 @@ class p_10816 {
 
             if (A.containsKey(num))
                 sb.append(A.get(num) + " ");
-            // System.out.print(A.get(num) + " ");
             else
                 sb.append(0 + " ");
-            // System.out.print(0 + " ");
         }
         System.out.println(sb.toString());
     }

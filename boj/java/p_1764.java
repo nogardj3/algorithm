@@ -30,7 +30,7 @@ class p_1764 {
     }
 
     public static void solution() {
-        A.retainAll(B);
+        A.retainAll(B); // 교집합 A와 B의 교집합
 
         ArrayList<String> aList = new ArrayList<>(A);
         Collections.sort(aList);

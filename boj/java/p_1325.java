@@ -32,7 +32,6 @@ class p_1325 {
         solution();
     }
 
-
     public static void solution() {
         int max = 0;
         ArrayList<Integer> max_arr = new ArrayList<>();
