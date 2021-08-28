@@ -27,16 +27,16 @@ class q25 {
     public static void solution() {
         for (int i = 1; i <= N; i++) {
             int sum = 0;
-            int failed = 0;
+            int byebye = 0;
 
             for (int j = 0; j < stages.length; j++) {
                 if (stages[j] >= i)
                     sum += 1;
                 if (stages[j] == i)
-                    failed += 1;
+                byebye += 1;
             }
             
-            A.add(new Item(i, (float) failed / (float) sum));
+            A.add(new Item(i, (float) byebye / (float) sum));
         }
         
         Collections.sort(A);
