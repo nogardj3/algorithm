@@ -17,15 +17,15 @@ class GenomicRangeQuery {
         st = new StringTokenizer(br.readLine());
         N = Integer.parseInt(st.nextToken());
 
-        st = new StringTokenizer(br.readLine());
         P = new int[N];
-        for (int i = 0; i < 0; i++) {
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
             P[i] = Integer.parseInt(st.nextToken());
         }
 
-        st = new StringTokenizer(br.readLine());
         Q = new int[N];
-        for (int i = 0; i < 0; i++) {
+        st = new StringTokenizer(br.readLine());
+        for (int i = 0; i < N; i++) {
             Q[i] = Integer.parseInt(st.nextToken());
         }
 
@@ -33,22 +33,40 @@ class GenomicRangeQuery {
     }
     
     public static void solution() {
-        Map<Character, Integer> map = new HashMap<>();
-        map.put('A', 1);
-        map.put('C', 2);
-        map.put('G', 3);
-        map.put('T', 4);
         int[] result = new int[P.length];
-        char[] chars = S.toCharArray();
-        for (int i = 0; i < P.length; i++) {
-            int maxVal = Integer.MAX_VALUE;
-            for (int j = P[i]; j <= Q[i]; j++) {
-                maxVal = Math.min(maxVal, chars[j]);
+
+        int[][] dp = new int[S.length()][4];
+
+        if (S.charAt(0) == 'A')
+            dp[0][0]++;
+        if (S.charAt(0) == 'C')
+            dp[0][1]++;
+        if (S.charAt(0) == 'G')
+            dp[0][2]++;
+        if (S.charAt(0) == 'T')
+            dp[0][3]++;
+        for (int i = 1; i < S.length(); i++) {
+            for (int j = 0; j < 4; j++) {
+                dp[i][j] = dp[i - 1][j];
             }
-            result[i] = maxVal;
+            if (S.charAt(i) == 'A')
+                dp[i][0]++;
+            if (S.charAt(i) == 'C')
+                dp[i][1]++;
+            if (S.charAt(i) == 'G')
+                dp[i][2]++;
+            if (S.charAt(i) == 'T')
+                dp[i][3]++;
         }
-        for (int i = 0; i < result.length; i++) {
-            result[i] = map.get((char) result[i]);
+
+        for (int i = 0; i < P.length; i++) {
+            for (int j = 0; j < 4; j++) {
+                int sub_val = P[i] == 0 ? 0 : dp[P[i] - 1][j];
+                if (dp[Q[i]][j] - sub_val != 0) {
+                    result[i] = j + 1;
+                    break;
+                }
+            }
         }
         
         System.out.println(Arrays.toString(result));
