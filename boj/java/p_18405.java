@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// FAILED
+// FAILED same as q17
 
 class p_18405 {
     static int N;

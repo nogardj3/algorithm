@@ -7,7 +7,8 @@ import java.util.*;
 
 class p_14496 {
     static int start, end, N, M;
-    static int[][] A;
+    static ArrayList<ArrayList<Node>> A = new ArrayList<>();
+    static int[] distance;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -20,41 +21,72 @@ class p_14496 {
         N = Integer.parseInt(st.nextToken());
         M = Integer.parseInt(st.nextToken());
 
-        A = new int[N+1][N+1];
         for (int i = 0; i <= N; i++) {
-            Arrays.fill(A[i], (int) 1e9);
+            A.add(new ArrayList<>());
         }
-
-        for (int a = 1; a <= N; a++) {
-            for (int b = 1; b <= N; b++) {
-                if (a == b) A[a][b] = 0;
-            }
-        }
+        distance = new int[N + 1];
 
         for (int i = 0; i < M; i++) {
-            st = new StringTokenizer(br.readLine());
-            int from = Integer.parseInt(st.nextToken());
-            int to = Integer.parseInt(st.nextToken());
+            int x = Integer.parseInt(st.nextToken());
+            int y = Integer.parseInt(st.nextToken());
 
-            A[from][to] = 1;
-            A[to][from] = 1;
+            A.get(x).add(new Node(y, 1));
+            A.get(y).add(new Node(x, 1));
         }
 
         solution();
     }
 
     public static void solution() {
-        for (int k = 1; k <= N; k++) {
-            for (int a = 1; a <= N; a++) {
-                for (int b = 1; b <= N; b++) {
-                    A[a][b] = Math.min(A[a][b], A[a][k] + A[k][b]);
+        dijkstra(N);
+    }
+
+    static void dijkstra(int start) {
+        PriorityQueue<Node> pq = new PriorityQueue<>();
+        pq.offer(new Node(start, 0));
+        distance[start] = 0;
+        while (!pq.isEmpty()) {
+            Node node = pq.poll();
+            int dist = node.getDistance();
+            int now = node.getIndex();
+
+            if (distance[now] < dist)
+                continue;
+
+            for (int i = 0; i < A.get(now).size(); i++) {
+                int cost = distance[now] + A.get(now).get(i).getDistance();
+
+                if (cost < distance[A.get(now).get(i).getIndex()]) {
+                    distance[A.get(now).get(i).getIndex()] = cost;
+                    pq.offer(new Node(A.get(now).get(i).getIndex(), cost));
                 }
             }
         }
+    }
 
-        if (start == end)
-            System.out.println(0);
-        else
-            System.out.println(A[start][end] <= 1e9 ? A[start][end] : -1);
+    static class Node implements Comparable<Node> {
+        private int index;
+        private int distance;
+    
+        public Node(int index, int distance) {
+            this.index = index;
+            this.distance = distance;
+        }
+    
+        public int getIndex() {
+            return this.index;
+        }
+    
+        public int getDistance() {
+            return this.distance;
+        }
+    
+        @Override
+        public int compareTo(Node other) {
+            if (this.distance < other.distance) {
+                return -1;
+            }
+            return 1;
+        }
     }
 }
