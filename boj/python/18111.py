@@ -13,8 +13,6 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-# FAILED
-
 n, m, b = map(int, input().split())
 data = []
 for i in range(n):

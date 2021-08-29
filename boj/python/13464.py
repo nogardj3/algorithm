@@ -13,8 +13,6 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-# FAILED
-
 n, k = map(int, input().split())
 
 data = list(map(int, input().split()))

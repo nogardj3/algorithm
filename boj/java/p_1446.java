@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
 
-// FAILED????
+// FAILED
 
 class p_1446 {
     static int N, M, K, X;

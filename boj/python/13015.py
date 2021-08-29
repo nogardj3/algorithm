@@ -13,8 +13,6 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-# FAILED
-
 N = int(input())
 print("*" * N + " " * (2 * N - 3) + "*" * N)
 for i in range(N - 2):
