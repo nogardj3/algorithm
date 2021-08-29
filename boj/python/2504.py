@@ -13,8 +13,6 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-# FAILED
-
 target_str = input()
 
 stackS = []

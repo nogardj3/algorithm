@@ -13,8 +13,6 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-# FAILED
-
 s = input()
 s = "".join(sorted(s))
 index_start = 0

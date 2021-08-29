@@ -13,8 +13,6 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-# FAILED
-
 n, score, p = map(int, input().split())
 
 if n == 0:

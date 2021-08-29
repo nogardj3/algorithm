@@ -13,8 +13,6 @@ import sys
 input = lambda: sys.stdin.readline().strip()
 ############################################
 
-# FAILED
-
 n = int(input())
 m = int(input())
 
