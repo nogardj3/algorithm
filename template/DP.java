@@ -5,7 +5,7 @@ import java.util.*;
 
 class DP {
     static int N;
-    static int[] d;
+    static int[] dp;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,7 +19,7 @@ class DP {
     }
 
     static void solution() {
-        d = new int[N + 1];
+        dp = new int[N + 1];
         top_down(N);
         bottom_up();
     }
@@ -27,20 +27,20 @@ class DP {
     static int top_down(int number) {
         if (number == 1)
             return 0;
-        if (d[number] > 0)
-            return d[number];
-        d[number] = top_down(number - 1) + 1;
+        if (dp[number] > 0)
+            return dp[number];
+        dp[number] = top_down(number - 1) + 1;
         if (number % 2 == 0) {
             int tmp = top_down(number / 2) + 1;
-            if (d[number] > tmp)
-                d[number] = tmp;
+            if (dp[number] > tmp)
+                dp[number] = tmp;
         }
         if (number % 3 == 0) {
             int tmp = top_down(number / 3) + 1;
-            if (d[number] > tmp)
-                d[number] = tmp;
+            if (dp[number] > tmp)
+                dp[number] = tmp;
         }
-        return d[number];
+        return dp[number];
     }
     
     static void bottom_up(){
